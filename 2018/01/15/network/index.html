@@ -5,30 +5,34 @@
   
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <link rel="dns-prefetch" href="https://123xiao.github.io/blog">
-  <title>记一次对公司网络限制的突破记录 | 无名键客</title>
+  <link rel="dns-prefetch" href="https://cyckerr.github.io/blog">
+  <title>Spring Boot 入门 | Cyckerr</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="事情是从某基友开始，成天在我面前说公司网络被限制了，被设置成只能访问某些特定的网站让他非常难受，在一天我们讨论着，突然duang出来一个想法….那就是可以试试用代理的形式，避开网络管理员的监控嘛？说干就干，以下是操作流程——">
-<meta name="keywords" content="网络">
+  <meta name="description" content="Spring Boot是Spring社区较新的一个项目。该项目的目的是帮助开发者更容易的创建基于Spring的应用程序和服务，让更多人的人更快的对Spring进行入门体验，让Java开发也能够实现Ruby on Rails那样的生产效率。为Spring生态系统提供了一种固定的、约定优于配置风格的框架。">
+<meta name="keywords" content="Spring">
 <meta property="og:type" content="article">
-<meta property="og:title" content="记一次对公司网络限制的突破记录">
-<meta property="og:url" content="https://123xiao.github.io/blog/2018/01/15/network/index.html">
-<meta property="og:site_name" content="无名键客">
-<meta property="og:description" content="事情是从某基友开始，成天在我面前说公司网络被限制了，被设置成只能访问某些特定的网站让他非常难受，在一天我们讨论着，突然duang出来一个想法….那就是可以试试用代理的形式，避开网络管理员的监控嘛？说干就干，以下是操作流程——">
+<meta property="og:title" content="Spring Boot 入门">
+<meta property="og:url" content="https://cyckerr.github.io/blog/2018/01/15/network/index.html">
+<meta property="og:site_name" content="Cyckerr">
+<meta property="og:description" content="Spring Boot是Spring社区较新的一个项目。该项目的目的是帮助开发者更容易的创建基于Spring的应用程序和服务，让更多人的人更快的对Spring进行入门体验，让Java开发也能够实现Ruby on Rails那样的生产效率。为Spring生态系统提供了一种固定的、约定优于配置风格的框架。">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="https://i.loli.net/2018/01/15/5a5c647128dac.jpg">
-<meta property="og:image" content="https://i.loli.net/2018/01/15/5a5c66e8a00fe.jpg">
-<meta property="og:image" content="https://i.loli.net/2018/01/15/5a5c675f31bf4.png">
-<meta property="og:image" content="https://i.loli.net/2018/01/15/5a5c67b64cf9a.png">
-<meta property="og:image" content="https://i.loli.net/2018/01/15/5a5c67f1441ca.png">
-<meta property="og:image" content="https://i.loli.net/2018/01/15/5a5c686b7fbcb.jpg">
+<meta property="og:image" content="https://cyckerr.github.io/blog/2018/01/15/network/spring boot.jpg">
+<meta property="og:image" content="https://cyckerr.github.io/blog/2018/01/15/network/spring boot pom.png">
+<meta property="og:image" content="https://cyckerr.github.io/blog/2018/01/15/network/spring boot dependency.png">
+<meta property="og:image" content="https://cyckerr.github.io/blog/2018/01/15/network/spring boot javaversion.png">
+<meta property="og:image" content="https://cyckerr.github.io/blog/2018/01/15/network/spring-boot-maven-plugin.png">
+<meta property="og:image" content="https://cyckerr.github.io/blog/2018/01/15/network/spring boot_application.png">
+<meta property="og:image" content="https://cyckerr.github.io/blog/2018/01/15/network/spring boot_main.png">
+<meta property="og:image" content="https://cyckerr.github.io/blog/2018/01/15/network/spring boot_exclude.png">
+<meta property="og:image" content="https://cyckerr.github.io/blog/2018/01/15/network/spring boot_home.png">
+<meta property="og:image" content="https://cyckerr.github.io/blog/2018/01/15/network/spring boot_success.png">	
 <meta property="og:updated_time" content="2018-04-08T11:00:50.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="记一次对公司网络限制的突破记录">
-<meta name="twitter:description" content="事情是从某基友开始，成天在我面前说公司网络被限制了，被设置成只能访问某些特定的网站让他非常难受，在一天我们讨论着，突然duang出来一个想法….那就是可以试试用代理的形式，避开网络管理员的监控嘛？说干就干，以下是操作流程——">
-<meta name="twitter:image" content="https://i.loli.net/2018/01/15/5a5c647128dac.jpg">
+<meta name="twitter:title" content="Spring Boot 入门">
+<meta name="twitter:description" content="Spring Boot是Spring社区较新的一个项目。该项目的目的是帮助开发者更容易的创建基于Spring的应用程序和服务，让更多人的人更快的对Spring进行入门体验，让Java开发也能够实现Ruby on Rails那样的生产效率。为Spring生态系统提供了一种固定的、约定优于配置风格的框架。">
+<meta name="twitter:image" content="https://cyckerr.github.io/blog/2018/01/15/network/spring boot.jpg">
   
-    <link rel="alternative" href="/atom.xml" title="无名键客" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="Cyckerr" type="application/atom+xml">
   
   
     <link rel="icon" href="/blog/assets/blogImg/favicon.png">
@@ -58,10 +62,10 @@
 			<img src="/blog/assets/blogImg/tx.jpg" class="js-avatar">
 		</a>
 		<hgroup>
-		  <h1 class="header-author"><a href="/blog/">无名键客</a></h1>
+		  <h1 class="header-author"><a href="/blog/">Cyckerr</a></h1>
 		</hgroup>
 		
-		<p class="header-subtitle">人若无名 方可专心练键！</p>
+		<p class="header-subtitle">一个好的程序员应该是那种过单行线都要往两边看的人。</p>
 		
 
 		<nav class="header-menu">
@@ -91,9 +95,9 @@
 		<nav class="header-nav">
 			<div class="social">
 				
-					<a class="github" target="_blank" href="https://github.com/123xiao" title="github"><i class="icon-github"></i></a>
+					<a class="github" target="_blank" href="https://github.com/cyckerr" title="github"><i class="icon-github"></i></a>
 		        
-					<a class="qq" target="_blank" href="/blog/1258183603" title="qq"><i class="icon-qq"></i></a>
+					<a class="qq" target="_blank" href="/blog/1436002669" title="qq"><i class="icon-qq"></i></a>
 		        
 			</div>
 		</nav>
@@ -114,10 +118,10 @@
 				<img src="/blog/assets/blogImg/tx.jpg" class="js-avatar">
 			</div>
 			<hgroup>
-			  <h1 class="header-author js-header-author">无名键客</h1>
+			  <h1 class="header-author js-header-author">Cyckerr</h1>
 			</hgroup>
 			
-			<p class="header-subtitle"><i class="icon icon-quo-left"></i>人若无名 方可专心练键！<i class="icon icon-quo-right"></i></p>
+			<p class="header-subtitle"><i class="icon icon-quo-left"></i>一个好的程序员应该是那种过单行线都要往两边看的人。<i class="icon icon-quo-right"></i></p>
 			
 			
 			
@@ -130,9 +134,9 @@
 			<nav class="header-nav">
 				<div class="social">
 					
-						<a class="github" target="_blank" href="https://github.com/123xiao" title="github"><i class="icon-github"></i></a>
+						<a class="github" target="_blank" href="https://github.com/cyckerr" title="github"><i class="icon-github"></i></a>
 			        
-						<a class="qq" target="_blank" href="/blog/1258183603" title="qq"><i class="icon-qq"></i></a>
+						<a class="qq" target="_blank" href="/blog/1436002669" title="qq"><i class="icon-qq"></i></a>
 			        
 				</div>
 			</nav>
@@ -165,7 +169,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      记一次对公司网络限制的突破记录
+      Spring Boot 入门
     </h1>
   
 
@@ -178,40 +182,66 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p> 事情是从某基友开始，成天在我面前说公司网络被限制了，被设置成只能访问某些特定的网站让他非常难受，在一天我们讨论着，突然duang出来一个想法….那就是可以试试用代理的形式，避开网络管理员的监控嘛？说干就干，以下是操作流程——<br> <img src="https://i.loli.net/2018/01/15/5a5c647128dac.jpg" alt=""><br> <a id="more"></a></p>
-<p>  系统：CentOS7 (以下教程也是针对 CentOS7)</p>
-<p>  网络：国内 国外均可（我们是国内）</p>
-<p>  登录 ssh 的什么的我就不再说了。。。。。</p>
-<p>  <strong>搭建 Shadowsocks 服务</strong></p>
-<p>这个服务是最简单也是最常用的。</p>
-<p><strong>1、安装组件</strong></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> yum install m2crypto python-setuptools</span><br><span class="line"><span class="meta">$</span> easy_install pip</span><br><span class="line"><span class="meta">$</span> pip install shadowsocks</span><br></pre></td></tr></table></figure>
-<p>安装时部分组件需要输入 Y 确认。小内存 VPS 可以分别安装组件。</p>
-<p><strong>2、安装完成后配置服务器参数</strong></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> vi/etc/shadowsocks.json</span><br></pre></td></tr></table></figure>
-<p>写入如下配置：</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line"><span class="attr">"server"</span>:<span class="string">"0.0.0.0"</span>，</span><br><span class="line"><span class="string">"server_port"</span>:<span class="number">8388</span>，</span><br><span class="line"><span class="string">"local_address"</span>:<span class="string">"127.0.0.1"</span>，</span><br><span class="line"><span class="string">"local_port"</span>:<span class="number">1080</span>，</span><br><span class="line"><span class="string">"password"</span>:<span class="string">"mypassword"</span>，</span><br><span class="line"><span class="string">"timeout"</span>:<span class="number">300</span>，</span><br><span class="line"><span class="string">"method"</span>:<span class="string">"aes-256-cfb"</span>，</span><br><span class="line"><span class="string">"fast_open"</span>:<span class="literal">false</span>，</span><br><span class="line"><span class="string">"workers"</span>:<span class="number">1</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>将上面的 mypassword 替换成你的密码， server_port 也是可以修改的，例如 443 是 Shadowsocks 客户端默认的端口号。</p>
-<p>如果需要修改端口，需要在防火墙里打开响应的端口，用 firewalld 操作就比较简单了：</p>
-<figure class="highlight crystal"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ vi/usr/<span class="class"><span class="keyword">lib</span>/<span class="title">firewalld</span>/<span class="title">services</span>/<span class="title">ss</span>.<span class="title">xml</span></span></span><br></pre></td></tr></table></figure>
-<p>下面代码粘贴到里面：</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span><br><span class="line"><span class="tag">&lt;<span class="name">service</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">short</span>&gt;</span>SS<span class="tag">&lt;/<span class="name">short</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">description</span>&gt;</span>Shadowsocks port</span><br><span class="line"><span class="tag">&lt;/<span class="name">description</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">portprotocol="tcp"port="自定义ss端口号"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">service</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>保存退出，然后重启 firewalld 服务：</p>
-<figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ firewall-<span class="keyword">cmd</span> --permanent --add-service=ss</span><br><span class="line">$ firewall-cmd --reload</span><br></pre></td></tr></table></figure>
-<p>运行命令，启动 Shadowsocks 服务</p>
-<p>运行下面的命令：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> ssserver -c /etc/shadowsocks.json</span><br></pre></td></tr></table></figure>
-<p>至此 shadowsocks 搭建完成。<br><img src="https://i.loli.net/2018/01/15/5a5c66e8a00fe.jpg" alt=""></p>
-<p>搭建完成后使用自己的Shadowsocks连接上就好了，连接后</p>
-<p><img src="https://i.loli.net/2018/01/15/5a5c675f31bf4.png" alt=""></p>
-<p>记录一下遇见的错误：<br><img src="https://i.loli.net/2018/01/15/5a5c67b64cf9a.png" alt=""><br>协议和混淆是这样的，不然就会报错<br><img src="https://i.loli.net/2018/01/15/5a5c67f1441ca.png" alt=""></p>
-<p>还有如果需要后台静静的运行的话直接<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> ssserver -c /etc/shadowsocks.json -d start</span><br></pre></td></tr></table></figure></p>
-<p>好了，教程结束<del>~</del><del>~</del>~~~<br><img src="https://i.loli.net/2018/01/15/5a5c686b7fbcb.jpg" alt=""></p>
+        <p> Spring Boot是Spring社区较新的一个项目。该项目的目的是帮助开发者更容易的创建基于Spring的应用程序和服务，让更多人的人更快的对Spring进行入门体验，让Java开发也能够实现Ruby on Rails那样的生产效率。为Spring生态系统提供了一种固定的、约定优于配置风格的框架。<br> <img src="https://cyckerr.github.io/blog/2018/01/15/network/spring boot.jpg" alt=""><br> <a id="more"></a></p>
+<h1 id="Spring Boot具有如下特性："><a href="#Spring Boot具有如下特性：" class="headerlink" title="Spring Boot具有如下特性："></a>Spring Boot具有如下特性：</h1><pre></pre>
+<p>    为基于Spring的开发提供更快的入门体验</p>
+<p>    开箱即用，没有代码生成，也无需XML配置。同时也可以修改默认值来满足特定的需求。</p>
+<p>    提供了一些大型项目中常见的非功能性特性，如嵌入式服务器、安全、指标，健康检测、外部配置等。</p>
+<p>    Spring Boot并不是不对Spring功能上的增强，而是提供了一种快速使用Spring的方式。</p>
+<h1 id="简单例子"><a href="#简单例子" class="headerlink" title="简单例子"></a>简单例子</h1>
+<p>Spring Boot建议使用Maven或Gradle，本文以Maven为例。首先创建一个一般的Maven项目，有一个pom.xml和基本的src/main/java结构。</p> 
+<pre><code>在pom.xml中写上如下内容：</code></pre>	    
+<p><img src="https://cyckerr.github.io/blog/2018/01/15/network/spring boot pom.png" alt=""></p>	    
+<pre><code>首先是增加了<parent></code></pre>	    
+<p>增加父pom比较简单，而且spring-boot-starter-parent包含了大量配置好的依赖管理，在自己项目添加这些依赖的时候不需要写<version>版本号。使用父pom虽然简单，但是有些情况我们已经有父pom，不能直接增加<parent>时，可以通过如下方式：</p>	    
+<p><img src="https://cyckerr.github.io/blog/2018/01/15/network/spring boot dependency.png" alt=""></p>		    
+<pre><code>java.version属性</code></pre>	    
+<p>上面pom.xml虽然没有出现这个属性，这里要特别提醒。Spring默认使用jdk1.6，如果你想使用jdk1.8，你需要在pom.xml的属性里面添加java.version，如下：</p>	    
+<p><img src="https://cyckerr.github.io/blog/2018/01/15/network/spring boot javaversion.png" alt=""></p>
+<pre><code>添加spring-boot-starter-web依赖</code></pre>	    
+<p>Spring通过添加spring-boot-starter-*这样的依赖就能支持具体的某个功能。我们这个示例最终是要实现web功能，所以添加的是这个依赖。更完整的功能列表可以查看：<a href="http://docs.spring.io/spring-boot/docs/1.2.3.RELEASE/reference/html/using-boot-build-systems.html#using-boot-starter-poms">using-boot-starter-poms</a></p>	    
+<pre><code>添加spring-boot-maven-plugin插件</code></pre>	    
+<p>该插件支持多种功能，常用的有两种，第一种是打包项目为可执行的jar包。在项目根目录下执行mvn package将会生成一个可执行的jar包，jar包中包含了所有依赖的jar包，只需要这一个jar包就可以运行程序，使用起来很方便。该命令执行后还会保留一个XXX.jar.original的jar包，包含了项目中单独的部分。
+生成这个可执行的jar包后，在命令行执行java -jar xxxx.jar即可启动项目。另外一个命令就是mvn spring-boot:run，可以直接使用tomcat（默认）启动项目。
+在我们开发过程中，我们需要经常修改，为了避免重复启动项目，我们可以启用热部署。Spring-Loaded项目提供了强大的热部署功能，添加/删除/修改 方法/字段/接口/枚举 等代码的时候都可以热部署，速度很快，很方便。
+想在Spring Boot中使用该功能非常简单，就是在spring-boot-maven-plugin插件下面添加依赖：</p>	    
+<p><img src="https://cyckerr.github.io/blog/2018/01/15/network/spring-boot-maven-plugin.png" alt=""></p>
+<p>添加以后，通过mvn spring-boot:run启动就支持热部署了。注意：使用热部署的时候，需要IDE编译类后才能生效，你可以打开自动编译功能，这样在你保存修改的时候，类就自动重新加载了。</p>
+<pre><code>创建一个应用类</code></pre>	    
+<p>我们创建一个Application类：</p>	    
+<p><img src="https://cyckerr.github.io/blog/2018/01/15/network/spring boot_application.png" alt=""></p>
+<pre><code>注意</code></pre>	    
+<p>Spring Boot建议将我们main方法所在的这个主要的配置类配置在根包名下。类似如下结构：</p>	    
+<p><img src="https://cyckerr.github.io/blog/2018/01/15/network/spring boot_main.png" alt=""></p>
+<p>在Application.java中有main方法。因为默认和包有关的注解，默认包名都是当前类所在的包，例如@ComponentScan, @EntityScan, @SpringBootApplication注解。</p>	
+<pre><code>@RestController</code></pre>	    
+<p>因为我们例子是写一个web应用，因此写的这个注解，这个注解相当于同时添加@Controller和@ResponseBody注解。</p>	 
+<pre><code>@EnableAutoConfiguration</code></pre>	    
+<p>Spring Boot建议只有一个带有该注解的类。@EnableAutoConfiguration作用：Spring Boot会自动根据你jar包的依赖来自动配置项目。例如当你项目下面有HSQLDB的依赖时，Spring Boot会创建默认的内存数据库的数据源DataSource，如果你自己创建了DataSource，Spring Boot就不会创建默认的DataSource。
+如果你不想让Spring Boot自动创建，你可以配置注解的exclude属性，例如：</p>	    
+<p><img src="https://cyckerr.github.io/blog/2018/01/15/network/spring boot_exclude.png" alt=""></p>
+<pre><code>@SpringBootApplication</code></pre>	    
+<p>由于大量项目都会在主要的配置类上添加@Configuration,@EnableAutoConfiguration,@ComponentScan三个注解。因此Spring Boot提供了@SpringBootApplication注解，该注解可以替代上面三个注解（使用Spring注解继承实现）。</p>	 
+<pre><code>home等方法</code></pre>
+<p><img src="https://cyckerr.github.io/blog/2018/01/15/network/spring boot_home.png" alt=""></p>
+<p>这些方法都添加了@RequestMapping("xxx")，这个注解起到路由的作用。</p>
+<pre><code>启动项目SpringApplication.run</code></pre>
+<p>启动Spring Boot项目最简单的方法就是执行下面的方法：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">SpringApplication.run(Application.class, args);</span></tr></table></figure>
+<p>该方法返回一个ApplicationContext对象，使用注解的时候返回的具体类型是AnnotationConfigApplicationContext或AnnotationConfigEmbeddedWebApplicationContext，当支持web的时候是第二个。
+除了上面这种方法外，还可以用下面的方法：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SpringApplication application = new SpringApplication(Application.class);</span><br><span class="line">application.run(args);</span><br></pre></td></tr></table></figure>
+<p>SpringApplication包含了一些其他可以配置的方法，如果你想做一些配置，可以用这种方式。除了上面这种直接的方法外，还可以使用SpringApplicationBuilder：</p>
+<p><img src="https://cyckerr.github.io/blog/2018/01/15/network/spring boot_builder.png" alt=""></p>
+<p>当使用SpringMVC的时候由于需要使用子容器，就需要用到SpringApplicationBuilder，该类有一个child(xxx...)方法可以添加子容器。</p>
+<pre><code>运行</code></pre>
+<p>在IDE中直接直接执行main方法，然后访问http://localhost:8080即可。另外还可以用上面提到的mvn，可以打包为可执行jar包，然后执行java -jar xxx.jar。
+或者执行mvn spring-boot:run运行项目。项目启动后输出如下日志：</p>
+<p><img src="https://cyckerr.github.io/blog/2018/01/15/network/spring boot_success.png" alt=""></p>
+<pre><code>最后</code></pre>
+<p>以上是Spring Boot基础的内容，有些不全面的地方或者读者有更多疑问，可以查看<a href="http://docs.spring.io/spring-boot/docs/1.2.3.RELEASE/reference/html/index.html">Spring Boot完整文档</a>。</p>
 
-      
-
-      
-        <div class="page-reward">
+<div class="page-reward">
           <a href="javascript:;" class="page-reward-btn tooltip-top">
             <div class="tooltip tooltip-east">
             <span class="tooltip-item">
@@ -220,7 +250,7 @@
             <span class="tooltip-content">
               <span class="tooltip-text">
                 <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>感谢老板<i class="icon icon-quo-right"></i></p>
                   <div class="reward-box">
                     
                     <div class="reward-box-item">
@@ -251,7 +281,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">网络</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Spring</a>
         		</li>
       		
 		</ul>
@@ -325,14 +355,14 @@
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          hexo博客重装与位置移动记录
+         java权限管理框架Shiro
         
       </div>
     </a>
   
   
     <a href="/blog/2017/11/22/Swagger/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Swagger介绍-一套流行的API框架</div>
+      <div class="article-nav-title">视频流</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -371,12 +401,12 @@
 <script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
 <script>
 var gitment = new Gitment({
-  id: "https://123xiao.github.io/blog/blog/2018/01/15/network/",
-  owner: '123xiao',
-  repo: '123xiao.github.io',
+  id: "https://cyckerr.github.io/blog/blog/2018/01/15/network/",
+  owner: 'cyckerr',
+  repo: 'cyckerr.github.io',
   oauth: {
-    client_id: '06ec42356d27e0d04e23',
-    client_secret: '35128fc8a844ddcce009dfe65e8a570ee318c2a1',
+    client_id: 'ddf8bd22f7b39ffa069d',
+    client_secret: '074c3adaaf0d7fb12d0eae896d2cbf32005de12e',
   },
 })
 gitment.render('gitment-ctn')
@@ -391,7 +421,7 @@ gitment.render('gitment-ctn')
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2018 无名键客
+    		&copy; 2018 Cyckerr
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -565,7 +595,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">一名后辈，愿跟上大神的脚步！</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">一个好的程序员应该是那种过单行线都要往两边看的人。</div>
   	  	
     	</section>
     
