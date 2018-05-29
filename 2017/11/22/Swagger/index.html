@@ -5,25 +5,25 @@
   
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <link rel="dns-prefetch" href="https://123xiao.github.io/blog">
-  <title>Swagger介绍-一套流行的API框架 | 无名键客</title>
+  <link rel="dns-prefetch" href="https://cyckerr.github.io/blog">
+  <title>如何用网络爬虫打造一架印钞机？ | Cyckerr</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="简介号称：世界最流行的API框架 官网：http://swagger.io/ 解决什么问题：在前后台分离的开发模式中，减小接口定义沟通成本，方便开发过程中测试，自动生成接口文档。 实例代码位置：https://github.com/123xiao/swagger">
+  <meta name="description" content="一、数据抓取流程 二、几点想法">
 <meta name="keywords" content="分享">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Swagger介绍-一套流行的API框架">
-<meta property="og:url" content="https://123xiao.github.io/blog/2017/11/22/Swagger/index.html">
-<meta property="og:site_name" content="无名键客">
-<meta property="og:description" content="简介号称：世界最流行的API框架 官网：http://swagger.io/ 解决什么问题：在前后台分离的开发模式中，减小接口定义沟通成本，方便开发过程中测试，自动生成接口文档。 实例代码位置：https://github.com/123xiao/swagger">
+<meta property="og:title" content="如何用网络爬虫打造一架印钞机？">
+<meta property="og:url" content="https://cyckerr.github.io/blog/2017/11/22/Swagger/index.html">
+<meta property="og:site_name" content="Cyckerr">
+<meta property="og:description" content="一、数据抓取流程 二、几点想法">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://ww3.sinaimg.cn/large/0060lm7Tly1flqyqlf6lrj30vk0f6q4a.jpg">
 <meta property="og:updated_time" content="2018-04-08T11:00:06.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Swagger介绍-一套流行的API框架">
-<meta name="twitter:description" content="简介号称：世界最流行的API框架 官网：http://swagger.io/ 解决什么问题：在前后台分离的开发模式中，减小接口定义沟通成本，方便开发过程中测试，自动生成接口文档。 实例代码位置：https://github.com/123xiao/swagger">
+<meta name="twitter:title" content="如何用网络爬虫打造一架印钞机？">
+<meta name="twitter:description" content="一、数据抓取流程 二、几点想法">
 <meta name="twitter:image" content="http://ww3.sinaimg.cn/large/0060lm7Tly1flqyqlf6lrj30vk0f6q4a.jpg">
   
-    <link rel="alternative" href="/atom.xml" title="无名键客" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="Cyckerr" type="application/atom+xml">
   
   
     <link rel="icon" href="/blog/assets/blogImg/favicon.png">
@@ -53,10 +53,10 @@
 			<img src="/blog/assets/blogImg/tx.jpg" class="js-avatar">
 		</a>
 		<hgroup>
-		  <h1 class="header-author"><a href="/blog/">无名键客</a></h1>
+		  <h1 class="header-author"><a href="/blog/">Cyckerr</a></h1>
 		</hgroup>
 		
-		<p class="header-subtitle">人若无名 方可专心练键！</p>
+		<p class="header-subtitle">一个好的程序员应该是那种过单行线都要往两边看的人。</p>
 		
 
 		<nav class="header-menu">
@@ -86,9 +86,9 @@
 		<nav class="header-nav">
 			<div class="social">
 				
-					<a class="github" target="_blank" href="https://github.com/123xiao" title="github"><i class="icon-github"></i></a>
+					<a class="github" target="_blank" href="https://github.com/cyckerr" title="github"><i class="icon-github"></i></a>
 		        
-					<a class="qq" target="_blank" href="/blog/1258183603" title="qq"><i class="icon-qq"></i></a>
+					<a class="qq" target="_blank" href="/blog/1436002669" title="qq"><i class="icon-qq"></i></a>
 		        
 			</div>
 		</nav>
@@ -109,10 +109,10 @@
 				<img src="/blog/assets/blogImg/tx.jpg" class="js-avatar">
 			</div>
 			<hgroup>
-			  <h1 class="header-author js-header-author">无名键客</h1>
+			  <h1 class="header-author js-header-author">Cyckerr</h1>
 			</hgroup>
 			
-			<p class="header-subtitle"><i class="icon icon-quo-left"></i>人若无名 方可专心练键！<i class="icon icon-quo-right"></i></p>
+			<p class="header-subtitle"><i class="icon icon-quo-left"></i>一个好的程序员应该是那种过单行线都要往两边看的人。<i class="icon icon-quo-right"></i></p>
 			
 			
 			
@@ -125,9 +125,9 @@
 			<nav class="header-nav">
 				<div class="social">
 					
-						<a class="github" target="_blank" href="https://github.com/123xiao" title="github"><i class="icon-github"></i></a>
+						<a class="github" target="_blank" href="https://github.com/cyckerr" title="github"><i class="icon-github"></i></a>
 			        
-						<a class="qq" target="_blank" href="/blog/1258183603" title="qq"><i class="icon-qq"></i></a>
+						<a class="qq" target="_blank" href="/blog/1436002669" title="qq"><i class="icon-qq"></i></a>
 			        
 				</div>
 			</nav>
@@ -160,7 +160,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Swagger介绍-一套流行的API框架
+      如何用网络爬虫打造一架印钞机？
     </h1>
   
 
@@ -173,22 +173,21 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a><a name="t0"></a>简介</h1><p>号称：世界最流行的API框架</p>
-<p>官网：<a href="http://swagger.io/" target="_blank" rel="noopener">http://swagger.io/</a></p>
-<p>解决什么问题：在前后台分离的开发模式中，减小接口定义沟通成本，方便开发过程中测试，自动生成接口文档。</p>
-<p>实例代码位置：<a href="https://github.com/123xiao/swagger" target="_blank" rel="noopener">https://github.com/123xiao/swagger</a><br><a id="more"></a></p>
-<h1 id="swagger使用方式"><a href="#swagger使用方式" class="headerlink" title="swagger使用方式"></a><a name="t1"></a>swagger使用方式</h1><h2 id="第一种"><a href="#第一种" class="headerlink" title="第一种"></a><a name="t2"></a>第一种</h2><p>定义YAML文件，然后可以生成各种语言的代码框架，对于后台程序员来说，较少人会愿意写出一堆YAML格式。</p>
-<h2 id="第二种"><a href="#第二种" class="headerlink" title="第二种"></a><a name="t3"></a>第二种</h2><p>swagger有各种语言的插件，可以通过配置及少量代码，生成接口文档及测试界面。</p>
-<p>我们多做了：一次性的配置及少量注解代码。</p>
-<p>我们不用再做：1、到Wiki中更新接口文档；2、Postman形式的测试；3、Curl形式的测试</p>
-<h1 id="swagger-java使用介绍"><a href="#swagger-java使用介绍" class="headerlink" title="swagger java使用介绍"></a><a name="t4"></a>swagger java使用介绍</h1><p>对于一个SpringMVC项目，使用swagger的配置如下：</p>
-<h2 id="pom-xml"><a href="#pom-xml" class="headerlink" title="pom.xml"></a><a name="t5"></a>pom.xml</h2><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- Swagger --&gt;</span>  </span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span>  </span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>io.swagger<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span>  </span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>swagger-core<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span>  </span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.5.8<span class="tag">&lt;/<span class="name">version</span>&gt;</span>  </span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span>  </span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span>  </span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>io.springfox<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span>  </span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>springfox-swagger2<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span>  </span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.4.0<span class="tag">&lt;/<span class="name">version</span>&gt;</span>  </span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span>  </span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span>  </span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>io.springfox<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span>  </span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>springfox-swagger-ui<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span>  </span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.4.0<span class="tag">&lt;/<span class="name">version</span>&gt;</span>  </span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h2 id="SwaggerConfiguration-java"><a href="#SwaggerConfiguration-java" class="headerlink" title="SwaggerConfiguration.java"></a><a name="t6"></a>SwaggerConfiguration.java</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Configuration</span>  </span><br><span class="line"><span class="meta">@EnableSwagger</span>2  </span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SwaggerConfiguration</span> </span>&#123;  </span><br><span class="line">    <span class="meta">@Bean</span>  </span><br><span class="line">    <span class="function"><span class="keyword">public</span> Docket <span class="title">api</span><span class="params">()</span> </span>&#123;  </span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> Docket(DocumentationType.SWAGGER_2)  </span><br><span class="line">                .select()  </span><br><span class="line">                .apis(RequestHandlerSelectors.any())  </span><br><span class="line">                .paths(PathSelectors.any())  </span><br><span class="line">                .build();  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="SwaggerWebMvcConfigurerAdapter-java"><a href="#SwaggerWebMvcConfigurerAdapter-java" class="headerlink" title="SwaggerWebMvcConfigurerAdapter.java"></a><a name="t7"></a>SwaggerWebMvcConfigurerAdapter.java</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="meta">@EnableWebMvc</span></span><br><span class="line"><span class="meta">@ComponentScan</span>(basePackages = <span class="string">"com.xx.travel.csc.stat.controller"</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SwaggerWebMvcConfigurerAdapter</span> <span class="keyword">extends</span> <span class="title">WebMvcConfigurerAdapter</span> </span>&#123;</span><br><span class="line"> </span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> ViewResolver <span class="title">viewResolver</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        InternalResourceViewResolver viewResolver = <span class="keyword">new</span> InternalResourceViewResolver();</span><br><span class="line">        viewResolver.setViewClass(JstlView.class);</span><br><span class="line">        viewResolver.setPrefix(<span class="string">"/WEB-INF/views/"</span>);</span><br><span class="line">        viewResolver.setSuffix(<span class="string">".jsp"</span>);</span><br><span class="line">        <span class="keyword">return</span> viewResolver;</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> MessageSource <span class="title">messageSource</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        ResourceBundleMessageSource messageSource = <span class="keyword">new</span> ResourceBundleMessageSource();</span><br><span class="line">        messageSource.setBasename(<span class="string">"messages"</span>);</span><br><span class="line">        <span class="keyword">return</span> messageSource;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">addResourceHandlers</span><span class="params">(ResourceHandlerRegistry registry)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>.addResourceHandlers(registry);</span><br><span class="line">        registry.addResourceHandler(<span class="string">"swagger-ui.html"</span>)</span><br><span class="line">                .addResourceLocations(<span class="string">"classpath:/META-INF/resources/"</span>);</span><br><span class="line">        registry.addResourceHandler(<span class="string">"/webjars/**"</span>)</span><br><span class="line">                .addResourceLocations(<span class="string">"classpath:/META-INF/resources/webjars/"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">configureDefaultServletHandling</span><span class="params">(DefaultServletHandlerConfigurer configurer)</span> </span>&#123;</span><br><span class="line">        configurer.enable();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="Controller实例"><a href="#Controller实例" class="headerlink" title="Controller实例"></a><a name="t8"></a>Controller实例</h2><p>然后，只要在我们的Controller里面增加注解 ApiOperation和ApiParam 即可。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Api</span>(tags = <span class="string">"TbAccountControllerApi"</span>, description = <span class="string">"账户管理接口相关api描述"</span>, hidden = <span class="keyword">true</span>, position = <span class="number">1</span>)</span><br><span class="line"><span class="meta">@RestController</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TbAccountController</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">private</span> Logger logger = LoggerFactory.getLogger(<span class="keyword">this</span>.getClass());</span><br><span class="line">	<span class="meta">@Autowired</span></span><br><span class="line">	<span class="keyword">private</span> TbAccountService tbAccountService;</span><br><span class="line"></span><br><span class="line">	<span class="meta">@ApiOperation</span>(value = <span class="string">"根据ID查询账户基本信息"</span>)</span><br><span class="line">	<span class="meta">@ApiImplicitParam</span>(paramType = <span class="string">"path"</span>, name = <span class="string">"accountId"</span>, dataType = <span class="string">"String"</span>, required = <span class="keyword">true</span>, value = <span class="string">"账户编号"</span>)</span><br><span class="line">	<span class="meta">@RequestMapping</span>(value = <span class="string">"/api/account/&#123;accountId&#125;"</span>, method = RequestMethod.GET)</span><br><span class="line">	<span class="function"><span class="keyword">public</span> Object <span class="title">getAccount</span><span class="params">(@PathVariable(name = <span class="string">"accountId"</span>)</span> String accountId) </span>&#123;</span><br><span class="line">		logger.info(<span class="string">"&gt;&gt;账户查询接口:"</span> + accountId);</span><br><span class="line">		ResultMessage resultMessage = <span class="keyword">new</span> ResultMessage(ErrorCode.ACCOUNT_SERVICE_OK);</span><br><span class="line">		<span class="keyword">if</span> (FieldValidator.isEmpty(accountId)) &#123;</span><br><span class="line">			resultMessage.setResultMessage(ErrorCode.ACCOUNT_SERVICE_REQUIRED_FIELD_IS_NULL);</span><br><span class="line">			<span class="keyword">return</span> resultMessage;</span><br><span class="line">		&#125;</span><br><span class="line">		TbAccount account = tbAccountService.findByAccountId(accountId);</span><br><span class="line">		resultMessage.setData(account);</span><br><span class="line">		<span class="keyword">return</span> resultMessage;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="Web界面"><a href="#Web界面" class="headerlink" title="Web界面"></a><a name="t9"></a>Web界面</h1><p>启动项目，输入Http://Path/swagger-ui.html，就可以给前端展示相关的API文档，并像使用Postman以及Curl命令一样，通过Web界面进行接口测试。</p>
-<p><img src="http://ww3.sinaimg.cn/large/0060lm7Tly1flqyqlf6lrj30vk0f6q4a.jpg" alt="enter description here"></p>
+         <h1 id="一、数据抓取流程"><a href="#一、数据抓取流程" class="headerlink" title="一、数据抓取流程"></a><a name="t0"></a><pre><code>一、数据抓取流程</pre></code></h1><p>给大家演示下：
+<pre><code>1）欲抓取表格数据的网页</pre></code></p>
+<p><img src="/blog/img/listly_beijin.png" alt=""></p>
+<pre><code>2）Listly 抓取数据</pre></code>
+<pre><code>方法 1：网页直接抓取</pre></code>
+<p><img src="/blog/img/listly_petch.png" alt=""></p>
+<pre><code>方法 2：浏览器插件抓取</pre></code>
+<p><img src="/blog/img/listly_chajian.png" alt=""></p>
+<pre><code>3）抓取结果</pre></code>
+<p><img src="/blog/img/listly_report.png" alt=""></p>
+<p>10 秒钟不到，简单点几下鼠标数据就抓下来了，很神奇有木有？<p>
+<pre><code>二、几点想法</pre></code>	
+<p>1、把常用复杂功能打包，对用户隐藏复杂性，做成简化版是做产品的一种思路。<p>
+<p>2、如梁宁所说，“产品能力是一个人的核心能力。产品能力就是训练一个人：判断信息，抓住要点，整合有限资源，把自己的价值打包成一个产品向世界交付，并获得回报”。Listly 是这句话的一个完美示例。<p>
+<p>3、尽早建立自己的产品，是获取睡后收入，进而财务自由的唯一道路。<p>
 
       
 
@@ -307,14 +306,14 @@
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          记一次对公司网络限制的突破记录
+          Spring Boot 入门
         
       </div>
     </a>
   
   
     <a href="/blog/2017/10/17/alibaba/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">阿里巴巴Java开发规约插件-体验</div>
+      <div class="article-nav-title">待续</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -353,12 +352,12 @@
 <script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
 <script>
 var gitment = new Gitment({
-  id: "https://123xiao.github.io/blog/blog/2017/11/22/Swagger/",
-  owner: '123xiao',
-  repo: '123xiao.github.io',
+  id: "https://cyckerr.github.io/blog/blog/2017/11/22/Swagger/",
+  owner: 'cyckerr',
+  repo: 'cyckerr.github.io',
   oauth: {
-    client_id: '06ec42356d27e0d04e23',
-    client_secret: '35128fc8a844ddcce009dfe65e8a570ee318c2a1',
+    client_id: 'ddf8bd22f7b39ffa069d',
+    client_secret: '074c3adaaf0d7fb12d0eae896d2cbf32005de12e',
   },
 })
 gitment.render('gitment-ctn')
@@ -373,7 +372,7 @@ gitment.render('gitment-ctn')
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2018 无名键客
+    		&copy; 2018 Cyckerr
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -547,7 +546,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">一名后辈，愿跟上大神的脚步！</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">一个好的程序员应该是那种过单行线都要往两边看的人。</div>
   	  	
     	</section>
     
