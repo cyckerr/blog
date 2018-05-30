@@ -5,26 +5,32 @@
   
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <link rel="dns-prefetch" href="https://123xiao.github.io/blog">
-  <title>阿里巴巴Java开发规约插件-体验 | 无名键客</title>
+  <link rel="dns-prefetch" href="https://cyckerr.github.io/blog">
+  <title>Java 使用 Redis | Cyckerr</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="插件有哪些功能？ 阿里技术公众号于今年的2月9日首次公布《阿里巴巴Java开发规约》，瞬间引起全民代码规范的热潮，上月底又发布了PDF的终极版，大家踊跃留言，期待配套的静态扫描工具开放出来。  为了让开发者更加方便、快速将规范推动并实行起来，阿里巴巴基于手册内容，研发了一套自动化的IDE检测插件（IDEA、Eclipse）。该插件在扫描代码后，将不符合规约的代码按Blocker/Critical/">
+  <meta name="description" content="开始在 Java 中使用 Redis 前， 我们需要确保已经安装了 redis 服务及 Java redis 驱动，且你的机器上能正常使用 Java。嘟嘟嘟，废话不多说，老司机要开车了。">
 <meta name="keywords" content="分享">
 <meta property="og:type" content="article">
-<meta property="og:title" content="阿里巴巴Java开发规约插件-体验">
-<meta property="og:url" content="https://123xiao.github.io/blog/2017/10/17/alibaba/index.html">
-<meta property="og:site_name" content="无名键客">
-<meta property="og:description" content="插件有哪些功能？ 阿里技术公众号于今年的2月9日首次公布《阿里巴巴Java开发规约》，瞬间引起全民代码规范的热潮，上月底又发布了PDF的终极版，大家踊跃留言，期待配套的静态扫描工具开放出来。  为了让开发者更加方便、快速将规范推动并实行起来，阿里巴巴基于手册内容，研发了一套自动化的IDE检测插件（IDEA、Eclipse）。该插件在扫描代码后，将不符合规约的代码按Blocker/Critical/">
+<meta property="og:title" content="Java 使用 Redis">
+<meta property="og:url" content="https://cyckerr.github.io/blog/2017/10/17/alibaba/index.html">
+<meta property="og:site_name" content="Cyckerr">
+<meta property="og:description" content="开始在 Java 中使用 Redis 前， 我们需要确保已经安装了 redis 服务及 Java redis 驱动，且你的机器上能正常使用 Java。嘟嘟嘟，废话不多说，老司机要开车了。">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="http://images2017.cnblogs.com/blog/521636/201710/521636-20171015113456871-1825659070.png">
-<meta property="og:image" content="http://images2017.cnblogs.com/blog/521636/201710/521636-20171015113722777-1375124743.png">
+<meta property="og:image" content="https://cyckerr.github.io/blog/2017/10/17/alibaba/redis_connection.png">
+<meta property="og:image" content="https://cyckerr.github.io/blog/2017/10/17/alibaba/redis_success.png">
+<meta property="og:image" content="https://cyckerr.github.io/blog/2017/10/17/alibaba/redis_string.png">
+<meta property="og:image" content="https://cyckerr.github.io/blog/2017/10/17/alibaba/redis_successstr.png">	
+<meta property="og:image" content="https://cyckerr.github.io/blog/2017/10/17/alibaba/redis_list.png">
+<meta property="og:image" content="https://cyckerr.github.io/blog/2017/10/17/alibaba/redis_listsuccess.png">
+<meta property="og:image" content="https://cyckerr.github.io/blog/2017/10/17/alibaba/redis_key.png">
+<meta property="og:image" content="https://cyckerr.github.io/blog/2017/10/17/alibaba/redis_keysuccess.png">
 <meta property="og:updated_time" content="2018-04-08T11:01:03.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="阿里巴巴Java开发规约插件-体验">
-<meta name="twitter:description" content="插件有哪些功能？ 阿里技术公众号于今年的2月9日首次公布《阿里巴巴Java开发规约》，瞬间引起全民代码规范的热潮，上月底又发布了PDF的终极版，大家踊跃留言，期待配套的静态扫描工具开放出来。  为了让开发者更加方便、快速将规范推动并实行起来，阿里巴巴基于手册内容，研发了一套自动化的IDE检测插件（IDEA、Eclipse）。该插件在扫描代码后，将不符合规约的代码按Blocker/Critical/">
-<meta name="twitter:image" content="http://images2017.cnblogs.com/blog/521636/201710/521636-20171015113456871-1825659070.png">
+<meta name="twitter:title" content="Java 使用 Redis">
+<meta name="twitter:description" content="开始在 Java 中使用 Redis 前， 我们需要确保已经安装了 redis 服务及 Java redis 驱动，且你的机器上能正常使用 Java。嘟嘟嘟，废话不多说，老司机要开车了。">
+<meta name="twitter:image" content="https://cyckerr.github.io/blog/2017/10/17/alibaba/redis.png">
   
-    <link rel="alternative" href="/atom.xml" title="无名键客" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="Cyckerr" type="application/atom+xml">
   
   
     <link rel="icon" href="/blog/assets/blogImg/favicon.png">
@@ -54,10 +60,10 @@
 			<img src="/blog/assets/blogImg/tx.jpg" class="js-avatar">
 		</a>
 		<hgroup>
-		  <h1 class="header-author"><a href="/blog/">无名键客</a></h1>
+		  <h1 class="header-author"><a href="/blog/">Cyckerr</a></h1>
 		</hgroup>
 		
-		<p class="header-subtitle">人若无名 方可专心练键！</p>
+		<p class="header-subtitle">一个好的程序员应该是那种过单行线都要往两边看的人。</p>
 		
 
 		<nav class="header-menu">
@@ -87,9 +93,9 @@
 		<nav class="header-nav">
 			<div class="social">
 				
-					<a class="github" target="_blank" href="https://github.com/123xiao" title="github"><i class="icon-github"></i></a>
+					<a class="github" target="_blank" href="https://github.com/cyckerr" title="github"><i class="icon-github"></i></a>
 		        
-					<a class="qq" target="_blank" href="/blog/1258183603" title="qq"><i class="icon-qq"></i></a>
+					<a class="qq" target="_blank" href="/blog/1436002669" title="qq"><i class="icon-qq"></i></a>
 		        
 			</div>
 		</nav>
@@ -110,10 +116,10 @@
 				<img src="/blog/assets/blogImg/tx.jpg" class="js-avatar">
 			</div>
 			<hgroup>
-			  <h1 class="header-author js-header-author">无名键客</h1>
+			  <h1 class="header-author js-header-author">Cyckerr</h1>
 			</hgroup>
 			
-			<p class="header-subtitle"><i class="icon icon-quo-left"></i>人若无名 方可专心练键！<i class="icon icon-quo-right"></i></p>
+			<p class="header-subtitle"><i class="icon icon-quo-left"></i>一个好的程序员应该是那种过单行线都要往两边看的人。<i class="icon icon-quo-right"></i></p>
 			
 			
 			
@@ -126,9 +132,9 @@
 			<nav class="header-nav">
 				<div class="social">
 					
-						<a class="github" target="_blank" href="https://github.com/123xiao" title="github"><i class="icon-github"></i></a>
+						<a class="github" target="_blank" href="https://github.com/cyckerr" title="github"><i class="icon-github"></i></a>
 			        
-						<a class="qq" target="_blank" href="/blog/1258183603" title="qq"><i class="icon-qq"></i></a>
+						<a class="qq" target="_blank" href="/blog/1436002669" title="qq"><i class="icon-qq"></i></a>
 			        
 				</div>
 			</nav>
@@ -161,7 +167,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      阿里巴巴Java开发规约插件-体验
+      Java 使用 Redis
     </h1>
   
 
@@ -174,21 +180,27 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="插件有哪些功能？"><a href="#插件有哪些功能？" class="headerlink" title="插件有哪些功能？"></a><strong>插件有哪些功能？</strong></h3><pre><code> 阿里技术公众号于今年的2月9日首次公布《阿里巴巴Java开发规约》，瞬间引起全民代码规范的热潮，上月底又发布了PDF的终极版，大家踊跃留言，期待配套的静态扫描工具开放出来。
+        <h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a><pre><code><strong>安装</strong></pre></code></h3><p>1.首先你需要下载驱动包 下载 <a href="https://mvnrepository.com/artifact/redis.clients/jedis">jedis.jar</a>，确保下载最新驱动包。
+<p>2.在你的 classpath 中包含该驱动包。</p>
+</p><a id="more"></a>
+<h3 id="连接到 redis 服务"><a href="#连接到 redis 服务" class="headerlink" title="连接到 redis 服务"></a><pre><code><strong>连接到 redis 服务</strong></pre></code></h3><p> <img src="https://cyckerr.github.io/blog/2017/10/17/alibaba/redis_connection.png" alt=""/></p>
+<p> 编译以上 Java 程序，确保驱动包的路径是正确的。</p>
+<p><img src="https://cyckerr.github.io/blog/2017/10/17/alibaba/redis_success.png" alt=""/></p>
+<h3 id="Redis Java String(字符串) 实例"><a href="#Redis Java String(字符串) 实例" class="headerlink" title="Redis Java String(字符串) 实例"></a><pre><code><strong>Redis Java String(字符串) 实例</strong></pre></code></h3>	  
+<p><img src="https://cyckerr.github.io/blog/2017/10/17/alibaba/redis_string.png" alt=""/></p>	  
+<p> 编译以上程序。</p>	  
+<p><img src="https://cyckerr.github.io/blog/2017/10/17/alibaba/redis_successstr.png" alt=""/></p>	  
+<h3 id="Redis Java List(列表) 实例"><a href="#Redis Java List(列表) 实例" class="headerlink" title="Redis Java List(列表) 实例"></a><pre><code><strong>Redis Java List(列表) 实例</strong></pre></code></h3>	  
+<p><img src="https://cyckerr.github.io/blog/2017/10/17/alibaba/redis_list.png" alt=""/></p>	  
+<p> 编译以上程序。</p>	  
+<p><img src="https://cyckerr.github.io/blog/2017/10/17/alibaba/redis_listsuccess.png" alt=""/></p>
+<h3 id="Redis Java Keys 实例"><a href="#Redis Java Keys 实例" class="headerlink" title="Redis Java Keys 实例"></a><pre><code><strong>Redis Java Keys 实例</strong></pre></code></h3>	  
+<p><img src="https://cyckerr.github.io/blog/2017/10/17/alibaba/redis_key.png" alt=""/></p>	  
+<p> 编译以上程序。</p>	  
+<p><img src="https://cyckerr.github.io/blog/2017/10/17/alibaba/redis_keysuccess.png" alt=""/></p>	  
+	  
 
-为了让开发者更加方便、快速将规范推动并实行起来，阿里巴巴基于手册内容，研发了一套自动化的IDE检测插件（IDEA、Eclipse）。该插件在扫描代码后，将不符合规约的代码按Blocker/Critical/Major三个等级显示在下方，甚至在IDEA上，我们还基于Inspection机制提供了实时检测功能，编写代码的同时也能快速发现问题所在。对于历史代码，部分规则实现了批量一键修复的功能，如此爽心悦目的功能是不是很值得拥有？提升代码质量，提高团队研发效能，插件将会一路同行。
-</code></pre><a id="more"></a>
-<h3 id="如何安装IDEA插件？"><a href="#如何安装IDEA插件？" class="headerlink" title="如何安装IDEA插件？"></a><strong>如何安装IDEA插件？</strong></h3><p> 目前，我们已将IDEA版的插件，发布至IDEA官方仓库中(最低支持版本14.1.7，JDK1.7+)。你只需打开 Settings &gt;&gt; Plugins &gt;&gt; Browse repositories 输入 Alibaba 搜索，看到对应插件后即可安装。</p>
-<p> 至于具体如何使用，请大家到官方Github仓库中进行查看。IDEA会自动检测插件新版，并提示出来，所以大家不用担心插件的更新问题。</p>
-<p> Github仓库地址：<a href="https://github.com/alibaba/p3c" target="_blank" rel="noopener">https://github.com/alibaba/p3c</a></p>
-<h3 id="如何安装Eclipse插件？"><a href="#如何安装Eclipse插件？" class="headerlink" title="如何安装Eclipse插件？"></a><strong>如何安装Eclipse插件？</strong></h3><p> Eclipse版插件支持4.2（Juno，JDK1.8+）及以上版本，我们提供自主的Update Site，通过 Help &gt;&gt; Install New Software 然后输入<a href="https://p3c.alibaba.com/plugin/eclipse/update" target="_blank" rel="noopener">https://p3c.alibaba.com/plugin/eclipse/update</a> 即可看到安装列表。大家可以通过 Help &gt;&gt; Check for Udates 进行插件新版检测。</p>
-<h3 id="使用体验"><a href="#使用体验" class="headerlink" title="使用体验"></a>使用体验</h3><p>安装后重启Eclipse，在代码文件上（或内容区）右键- “阿里编码规约扫描”，可以看到你代码中不规范的提示，以及修改建议，边上还有规约的详细信息。</p>
-<p><img src="http://images2017.cnblogs.com/blog/521636/201710/521636-20171015113456871-1825659070.png" alt=""> <img src="http://images2017.cnblogs.com/blog/521636/201710/521636-20171015113722777-1375124743.png" alt=""></p>
-
-      
-
-      
-        <div class="page-reward">
+     <div class="page-reward">
           <a href="javascript:;" class="page-reward-btn tooltip-top">
             <div class="tooltip tooltip-east">
             <span class="tooltip-item">
@@ -197,7 +209,7 @@
             <span class="tooltip-content">
               <span class="tooltip-text">
                 <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>感谢老板<i class="icon icon-quo-right"></i></p>
                   <div class="reward-box">
                     
                     <div class="reward-box-item">
@@ -302,7 +314,7 @@
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          Swagger介绍-一套流行的API框架
+          如何用网络爬虫打造一架印钞机？
         
       </div>
     </a>
@@ -368,7 +380,7 @@ gitment.render('gitment-ctn')
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2018 无名键客
+    		&copy; 2018 C
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -542,7 +554,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">一名后辈，愿跟上大神的脚步！</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">一个好的程序员应该是那种过单行线都要往两边看的人。</div>
   	  	
     	</section>
     
