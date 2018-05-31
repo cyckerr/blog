@@ -5,30 +5,26 @@
   
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <link rel="dns-prefetch" href="https://123xiao.github.io/blog">
-  <title>Chrome插件开发-网页中运行自己的JS | 无名键客</title>
+  <link rel="dns-prefetch" href="https://cyckerr.github.io/blog">
+  <title>requests模块实践：爬取淘宝商品信息和价格 | Cyckerr</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="近几日老大让我接手一个很久之前他开发的一个Chrome插件，当时很好奇研究了一下怎么在浏览器中运行自己的JS。发现原来可以通过Chrome的扩展程序可以实现，废话就不多说了直接上dome代码。。。">
+  <meta name="description" content="Python可以进行网络爬虫的故事已经不是新鲜事了，今天呢本司机要带大家实现的是爬取淘宝商品信息和价格，运用到的主要是requests模块，废话不多说，坐稳坐稳，开车开车。">
 <meta name="keywords" content="分享,随笔">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Chrome插件开发-网页中运行自己的JS">
-<meta property="og:url" content="https://123xiao.github.io/blog/2017/09/22/ChromeRunJS/index.html">
-<meta property="og:site_name" content="无名键客">
-<meta property="og:description" content="近几日老大让我接手一个很久之前他开发的一个Chrome插件，当时很好奇研究了一下怎么在浏览器中运行自己的JS。发现原来可以通过Chrome的扩展程序可以实现，废话就不多说了直接上dome代码。。。">
+<meta property="og:title" content="requests模块实践：爬取淘宝商品信息和价格">
+<meta property="og:url" content="https://cyckerr.github.io/blog/2017/09/22/ChromeRunJS/index.html">
+<meta property="og:site_name" content="Cyckerr">
+<meta property="og:description" content="Python可以进行网络爬虫的故事已经不是新鲜事了，今天呢本司机要带大家实现的是爬取淘宝商品信息和价格，运用到的主要是requests模块，废话不多说，坐稳坐稳，开车开车。">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="http://ww3.sinaimg.cn/large/0060lm7Tly1fjsj3pik4gj30gp0d1dii.jpg">
-<meta property="og:image" content="http://ww4.sinaimg.cn/large/0060lm7Tly1fjsj5xg9bjj30oo0393ym.jpg">
-<meta property="og:image" content="http://ww1.sinaimg.cn/large/0060lm7Tly1fjsj6rtru2j304m02rmx0.jpg">
-<meta property="og:image" content="http://ww4.sinaimg.cn/large/0060lm7Tly1fjsj86rw74j31200gtaco.jpg">
-<meta property="og:image" content="http://ww3.sinaimg.cn/large/0060lm7Tly1fjsj8yaj68j30yj0gu76m.jpg">
-<meta property="og:image" content="http://img.blog.csdn.net/20160917134237769">
+<meta property="og:image" content="https://cyckerr.github.io/blog/2017/09/22/ChromeRunJS/python_daima.png">
+<meta property="og:image" content="https://cyckerr.github.io/blog/2017/09/22/ChromeRunJS/python_txt.jpg">
 <meta property="og:updated_time" content="2018-04-08T02:46:32.465Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Chrome插件开发-网页中运行自己的JS">
-<meta name="twitter:description" content="近几日老大让我接手一个很久之前他开发的一个Chrome插件，当时很好奇研究了一下怎么在浏览器中运行自己的JS。发现原来可以通过Chrome的扩展程序可以实现，废话就不多说了直接上dome代码。。。">
-<meta name="twitter:image" content="http://ww3.sinaimg.cn/large/0060lm7Tly1fjsj3pik4gj30gp0d1dii.jpg">
+<meta name="twitter:title" content="requests模块实践：爬取淘宝商品信息和价格">
+<meta name="twitter:description" content="Python可以进行网络爬虫的故事已经不是新鲜事了，今天呢本司机要带大家实现的是爬取淘宝商品信息和价格，运用到的主要是requests模块，废话不多说，坐稳坐稳，开车开车。">
+<meta name="twitter:image" content="https://cyckerr.github.io/blog/2017/09/22/ChromeRunJS/python_daima.png">
   
-    <link rel="alternative" href="/atom.xml" title="无名键客" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="Cyckerr" type="application/atom+xml">
   
   
     <link rel="icon" href="/blog/assets/blogImg/favicon.png">
@@ -58,10 +54,10 @@
 			<img src="/blog/assets/blogImg/tx.jpg" class="js-avatar">
 		</a>
 		<hgroup>
-		  <h1 class="header-author"><a href="/blog/">无名键客</a></h1>
+		  <h1 class="header-author"><a href="/blog/">Cyckerr</a></h1>
 		</hgroup>
 		
-		<p class="header-subtitle">人若无名 方可专心练键！</p>
+		<p class="header-subtitle">一个好的程序员应该是那种过单行线都要往两边看的人。</p>
 		
 
 		<nav class="header-menu">
@@ -91,9 +87,9 @@
 		<nav class="header-nav">
 			<div class="social">
 				
-					<a class="github" target="_blank" href="https://github.com/123xiao" title="github"><i class="icon-github"></i></a>
+					<a class="github" target="_blank" href="https://github.com/cyckerr" title="github"><i class="icon-github"></i></a>
 		        
-					<a class="qq" target="_blank" href="/blog/1258183603" title="qq"><i class="icon-qq"></i></a>
+					<a class="qq" target="_blank" href="/blog/1436002669" title="qq"><i class="icon-qq"></i></a>
 		        
 			</div>
 		</nav>
@@ -114,10 +110,10 @@
 				<img src="/blog/assets/blogImg/tx.jpg" class="js-avatar">
 			</div>
 			<hgroup>
-			  <h1 class="header-author js-header-author">无名键客</h1>
+			  <h1 class="header-author js-header-author">Cyckerr</h1>
 			</hgroup>
 			
-			<p class="header-subtitle"><i class="icon icon-quo-left"></i>人若无名 方可专心练键！<i class="icon icon-quo-right"></i></p>
+			<p class="header-subtitle"><i class="icon icon-quo-left"></i>一个好的程序员应该是那种过单行线都要往两边看的人。<i class="icon icon-quo-right"></i></p>
 			
 			
 			
@@ -130,9 +126,9 @@
 			<nav class="header-nav">
 				<div class="social">
 					
-						<a class="github" target="_blank" href="https://github.com/123xiao" title="github"><i class="icon-github"></i></a>
+						<a class="github" target="_blank" href="https://github.com/cyckerr" title="github"><i class="icon-github"></i></a>
 			        
-						<a class="qq" target="_blank" href="/blog/1258183603" title="qq"><i class="icon-qq"></i></a>
+						<a class="qq" target="_blank" href="/blog/1436002669" title="qq"><i class="icon-qq"></i></a>
 			        
 				</div>
 			</nav>
@@ -165,7 +161,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Chrome插件开发-网页中运行自己的JS
+      requests模块实践：爬取淘宝商品信息和价格
     </h1>
   
 
@@ -178,23 +174,13 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>近几日老大让我接手一个很久之前他开发的一个Chrome插件，当时很好奇研究了一下怎么在浏览器中运行自己的JS。发现原来可以通过Chrome的扩展程序可以实现，废话就不多说了直接上dome代码。。。<br><a id="more"></a></p>
-<p>新建一个manifest.json的文件（扩展程序的配置文件）该文件字符集格式必须为UTF-8</p>
-<p>manifest.json代码</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"name"</span>: <span class="string">"无名键客"</span>,</span><br><span class="line">  <span class="attr">"manifest_version"</span>: <span class="number">2</span>,</span><br><span class="line">  <span class="attr">"version"</span>: <span class="string">"1.0"</span>,</span><br><span class="line">  <span class="attr">"description"</span>: <span class="string">"第一个Chrome插件~~！"</span>,</span><br><span class="line">  <span class="attr">"browser_action"</span>: &#123;</span><br><span class="line">    <span class="attr">"default_icon"</span>: <span class="string">"1.png"</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">"content_scripts"</span>: [</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="attr">"matches"</span>: [<span class="string">"https://github.com/*"</span>],</span><br><span class="line">      <span class="attr">"js"</span>: [<span class="string">"script.js"</span>]</span><br><span class="line">    &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>default_icon ： 插件图标<br>matches ： Content Script注入的Web页面<br>js : 注入到匹配的Web页面中的JS文件</p>
-<p>script.js代码</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">alert(<span class="string">"Hello Github！！！"</span>);</span><br><span class="line"><span class="built_in">document</span>.getElementById(<span class="string">"user[login]"</span>).value=<span class="string">"xiaoguokang"</span>;</span><br><span class="line"><span class="built_in">document</span>.getElementById(<span class="string">"user[email]"</span>).value=<span class="string">"1258183603@163.com"</span>;</span><br><span class="line"><span class="built_in">document</span>.getElementById(<span class="string">"user[password]"</span>).value=<span class="string">"123456789"</span>;</span><br></pre></td></tr></table></figure>
-<p>OK现在Chrome扩展插件已经完成了 </p>
-<p>1、打开 Chrome菜单–&gt;更多工具–&gt;扩展程序<br><img src="http://ww3.sinaimg.cn/large/0060lm7Tly1fjsj3pik4gj30gp0d1dii.jpg" alt="enter description here"></p>
-<p> 2、点击 加载已解压的扩展程序<br> <img src="http://ww4.sinaimg.cn/large/0060lm7Tly1fjsj5xg9bjj30oo0393ym.jpg" alt="enter description here"></p>
-<p> 3、可以看到程序已经安装成功<br><img src="http://ww1.sinaimg.cn/large/0060lm7Tly1fjsj6rtru2j304m02rmx0.jpg" alt="enter description here"></p>
-<p>然后打开github的时候–&gt;Hello Github!!!</p>
-<p><img src="http://ww4.sinaimg.cn/large/0060lm7Tly1fjsj86rw74j31200gtaco.jpg" alt="enter description here"></p>
-<p>点击确定后</p>
-<p><img src="http://ww3.sinaimg.cn/large/0060lm7Tly1fjsj8yaj68j30yj0gu76m.jpg" alt="enter description here"></p>
-<p>有没有发现用户名、邮箱、密码都填上了<br><img src="http://img.blog.csdn.net/20160917134237769" alt="enter description here"></p>
-<p>OK现在已经完成了~~~</p>
+        <p>来来来，看过来，直接上代码：<br><a id="more"></a></p>
+<p><img src="https://cyckerr.github.io/blog/2017/09/22/ChromeRunJS/python_daima.png"/></p>
+<p>看效果看效果：</p>
+<p><img src="https://cyckerr.github.io/blog/2017/09/22/ChromeRunJS/python_txt.jpg"/></p>
+<p>是不是特简单特简单，人生苦短，我用python!</p>
+	    
+
 
       
 
@@ -208,7 +194,7 @@
             <span class="tooltip-content">
               <span class="tooltip-text">
                 <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>感谢老板<i class="icon icon-quo-right"></i></p>
                   <div class="reward-box">
                     
                     <div class="reward-box-item">
@@ -299,7 +285,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://123xiao.github.io/blog/2017/09/22/ChromeRunJS/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://cyckerr.github.io/blog/2017/09/22/ChromeRunJS/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -317,7 +303,7 @@
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          Eclipse上的SmartQQ插件，防Boss利器
+          树莓派使用nginx+rtmp搭建直播服务器
         
       </div>
     </a>
@@ -363,12 +349,12 @@
 <script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
 <script>
 var gitment = new Gitment({
-  id: "https://123xiao.github.io/blog/blog/2017/09/22/ChromeRunJS/",
-  owner: '123xiao',
-  repo: '123xiao.github.io',
+  id: "https://cyckerr.github.io/blog/blog/2017/09/22/ChromeRunJS/",
+  owner: 'cyckerr',
+  repo: 'cyckerr.github.io',
   oauth: {
-    client_id: '06ec42356d27e0d04e23',
-    client_secret: '35128fc8a844ddcce009dfe65e8a570ee318c2a1',
+    client_id: 'ddf8bd22f7b39ffa069d',
+    client_secret: '074c3adaaf0d7fb12d0eae896d2cbf32005de12e',
   },
 })
 gitment.render('gitment-ctn')
@@ -383,7 +369,7 @@ gitment.render('gitment-ctn')
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2018 无名键客
+    		&copy; 2018 Cyckerr
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
