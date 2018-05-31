@@ -5,25 +5,34 @@
   
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <link rel="dns-prefetch" href="https://123xiao.github.io/blog">
-  <title>Eclipse上的SmartQQ插件，防Boss利器 | 无名键客</title>
+  <link rel="dns-prefetch" href="https://cyckerr.github.io/blog">
+  <title>树莓派使用nginx+rtmp搭建直播服务器 | Cyckerr</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Eclipse上的SmartQQ插件，防Boss利器，让你可以在eclipse中使用QQ进行聊天 Intellij IDEA上的插件请移步这里: https://github.com/Jamling/SmartQQ4IntelliJ, 支持所有的Intellij IDE哦，包含Android Studio, WebStrom等">
+  <meta name="description" content="可以作为家用网络监控器的一种廉价解决方案 
+基本思路是：使用avconv/GStreamer读取摄像头并生成flv视频流 -> Strobe Media Playback接受视频流 -> nginx服务器页面嵌入Strobe的flash播放器 -> nginx的rtmp模块实现直播。">
 <meta name="keywords" content="分享,随笔">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Eclipse上的SmartQQ插件，防Boss利器">
-<meta property="og:url" content="https://123xiao.github.io/blog/2017/09/29/SmartQQ/index.html">
-<meta property="og:site_name" content="无名键客">
-<meta property="og:description" content="Eclipse上的SmartQQ插件，防Boss利器，让你可以在eclipse中使用QQ进行聊天 Intellij IDEA上的插件请移步这里: https://github.com/Jamling/SmartQQ4IntelliJ, 支持所有的Intellij IDE哦，包含Android Studio, WebStrom等">
+<meta property="og:title" content="树莓派使用nginx+rtmp搭建直播服务器">
+<meta property="og:url" content="https://cyckerr.github.io/blog/2017/09/29/SmartQQ/index.html">
+<meta property="og:site_name" content="Cyckerr">
+<meta property="og:description" content="可以作为家用网络监控器的一种廉价解决方案 
+基本思路是：使用avconv/GStreamer读取摄像头并生成flv视频流 -> Strobe Media Playback接受视频流 -> nginx服务器页面嵌入Strobe的flash播放器 -> nginx的rtmp模块实现直播。">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="https://raw.githubusercontent.com/Jamling/SmartQQ4Eclipse/master/screenshot.gif">
+<meta property="og:image" content="https://cyckerr.github.io/blog/2017/09/29/SmartQQ/shumeipai.jpg">
+<meta property="og:image" content="https://cyckerr.github.io/blog/2017/09/29/SmartQQ/nginx_an.png">
+<meta property="og:image" content="https://cyckerr.github.io/blog/2017/09/29/SmartQQ/nginx_update.png">
+<meta property="og:image" content="https://cyckerr.github.io/blog/2017/09/29/SmartQQ/nginx_html.png">
+<meta property="og:image" content="https://cyckerr.github.io/blog/2017/09/29/SmartQQ/nginx_ssh.png">
+<meta property="og:image" content="https://cyckerr.github.io/blog/2017/09/29/SmartQQ/nginx_sh.png">
+<meta property="og:image" content="https://cyckerr.github.io/blog/2017/09/29/SmartQQ/nginx_fi.png">
 <meta property="og:updated_time" content="2018-04-08T10:58:51.572Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Eclipse上的SmartQQ插件，防Boss利器">
-<meta name="twitter:description" content="Eclipse上的SmartQQ插件，防Boss利器，让你可以在eclipse中使用QQ进行聊天 Intellij IDEA上的插件请移步这里: https://github.com/Jamling/SmartQQ4IntelliJ, 支持所有的Intellij IDE哦，包含Android Studio, WebStrom等">
-<meta name="twitter:image" content="https://raw.githubusercontent.com/Jamling/SmartQQ4Eclipse/master/screenshot.gif">
+<meta name="twitter:title" content="树莓派使用nginx+rtmp搭建直播服务器">
+<meta name="twitter:description" content="可以作为家用网络监控器的一种廉价解决方案 
+基本思路是：使用avconv/GStreamer读取摄像头并生成flv视频流 -> Strobe Media Playback接受视频流 -> nginx服务器页面嵌入Strobe的flash播放器 -> nginx的rtmp模块实现直播。">
+<meta name="twitter:image" content="https://cyckerr.github.io/blog/2017/09/29/SmartQQ/shumeipai.jpg">
   
-    <link rel="alternative" href="/atom.xml" title="无名键客" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="Cyckerr" type="application/atom+xml">
   
   
     <link rel="icon" href="/blog/assets/blogImg/favicon.png">
@@ -53,10 +62,10 @@
 			<img src="/blog/assets/blogImg/tx.jpg" class="js-avatar">
 		</a>
 		<hgroup>
-		  <h1 class="header-author"><a href="/blog/">无名键客</a></h1>
+		  <h1 class="header-author"><a href="/blog/">Cyckerr</a></h1>
 		</hgroup>
 		
-		<p class="header-subtitle">人若无名 方可专心练键！</p>
+		<p class="header-subtitle">一个好的程序员应该是那种过单行线都要往两边看的人。</p>
 		
 
 		<nav class="header-menu">
@@ -86,9 +95,9 @@
 		<nav class="header-nav">
 			<div class="social">
 				
-					<a class="github" target="_blank" href="https://github.com/123xiao" title="github"><i class="icon-github"></i></a>
+					<a class="github" target="_blank" href="https://github.com/cyckerr" title="github"><i class="icon-github"></i></a>
 		        
-					<a class="qq" target="_blank" href="/blog/1258183603" title="qq"><i class="icon-qq"></i></a>
+					<a class="qq" target="_blank" href="/blog/1436002669" title="qq"><i class="icon-qq"></i></a>
 		        
 			</div>
 		</nav>
@@ -109,10 +118,10 @@
 				<img src="/blog/assets/blogImg/tx.jpg" class="js-avatar">
 			</div>
 			<hgroup>
-			  <h1 class="header-author js-header-author">无名键客</h1>
+			  <h1 class="header-author js-header-author">Cyckerr</h1>
 			</hgroup>
 			
-			<p class="header-subtitle"><i class="icon icon-quo-left"></i>人若无名 方可专心练键！<i class="icon icon-quo-right"></i></p>
+			<p class="header-subtitle"><i class="icon icon-quo-left"></i>一个好的程序员应该是那种过单行线都要往两边看的人。<i class="icon icon-quo-right"></i></p>
 			
 			
 			
@@ -125,9 +134,9 @@
 			<nav class="header-nav">
 				<div class="social">
 					
-						<a class="github" target="_blank" href="https://github.com/123xiao" title="github"><i class="icon-github"></i></a>
+						<a class="github" target="_blank" href="https://github.com/cyckerr" title="github"><i class="icon-github"></i></a>
 			        
-						<a class="qq" target="_blank" href="/blog/1258183603" title="qq"><i class="icon-qq"></i></a>
+						<a class="qq" target="_blank" href="/blog/1436002669" title="qq"><i class="icon-qq"></i></a>
 			        
 				</div>
 			</nav>
@@ -160,7 +169,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Eclipse上的SmartQQ插件，防Boss利器
+      树莓派使用nginx+rtmp搭建直播服务器
     </h1>
   
 
@@ -173,123 +182,50 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Eclipse上的SmartQQ插件，防Boss利器，让你可以在eclipse中使用QQ进行聊天</p>
-<p>Intellij IDEA上的插件请移步这里: <a href="https://github.com/Jamling/SmartQQ4IntelliJ" target="_blank" rel="noopener">https://github.com/Jamling/SmartQQ4IntelliJ</a>, 支持所有的Intellij IDE哦，包含Android Studio, WebStrom等</p>
-<p><a href="https://raw.githubusercontent.com/Jamling/SmartQQ4Eclipse/master/screenshot.gif" target="_blank" rel="noopener"><img src="https://raw.githubusercontent.com/Jamling/SmartQQ4Eclipse/master/screenshot.gif" alt="screenshot"></a><br><a id="more"></a></p>
-<h2 id="功能"><a href="#功能" class="headerlink" title="功能"></a><a href="#%E5%8A%9F%E8%83%BD"></a>功能</h2><p>特色功能</p>
-<ul>
-<li>热键设定</li>
-<li>一键关闭</li>
-<li>支持图灵机器人接入</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th>Feature</th>
-<th>Origin</th>
-<th>Eclipse</th>
-<th>IntelliJ</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>文本消息</td>
-<td>yes</td>
-<td>X</td>
-<td>X</td>
-</tr>
-<tr>
-<td>表情</td>
-<td>yes (系统表情)</td>
-<td>X</td>
-<td>X</td>
-</tr>
-<tr>
-<td>图灵QQ机器人</td>
-<td>X</td>
-<td>yes</td>
-<td>X</td>
-</tr>
-<tr>
-<td><a href="http://api.ieclipse.cn/smartqq/" target="_blank" rel="noopener">发送文件</a></td>
-<td>X</td>
-<td>yes</td>
-<td>O 不支工程文件快捷发送</td>
-</tr>
-<tr>
-<td>消息群发</td>
-<td>X</td>
-<td>yes</td>
-<td>X</td>
-</tr>
-<tr>
-<td>代码评审</td>
-<td>X</td>
-<td>yes</td>
-<td>X</td>
-</tr>
-</tbody>
-</table>
-<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a><a href="#%E5%AE%89%E8%A3%85"></a>安装</h2><h3 id="Eclipse-Marketplace"><a href="#Eclipse-Marketplace" class="headerlink" title="Eclipse Marketplace"></a><a href="#eclipse-marketplace"></a>Eclipse Marketplace</h3><ol>
-<li>点击Eclipse-&gt;Help-&gt;Eclipse Marketplace…打开eclipse插件市场</li>
-<li>输入SmartQQ搜索</li>
-<li>点击Install安装</li>
-</ol>
-<p><strong>推荐使用Eclipse Martplace安装</strong></p>
-<h3 id="Install-New-Software"><a href="#Install-New-Software" class="headerlink" title="Install New Software"></a><a href="#install-new-software"></a>Install New Software</h3><ol>
-<li>点击Eclipse-&gt;Help-&gt;Install New Software…搜索插件</li>
-<li>在Work with后面的输入框中输入<a href="http://dl.ieclipse.cn/updates/" target="_blank" rel="noopener">http://dl.ieclipse.cn/updates/</a> 并回车</li>
-<li>选中SmartQQ，并取消勾选”Contact all update site during install to find required software”</li>
-<li>点击底部Next按钮继续安装</li>
-</ol>
-<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a><a href="#%E4%BD%BF%E7%94%A8"></a>使用</h2><ol>
-<li>点击Windows-&gt;Show view，找到SmartQQ下的Smart双击打开Smart视图</li>
-<li>点击视图工具栏或菜单栏中的同步图标进行登录</li>
-<li>使用手机QQ扫描二维码</li>
-<li>验证成功后，等待拉取最近消息，好友及群组列表</li>
-<li>双击Smart视图中的好友或群，打开聊天窗口（聊天窗口为Console）</li>
-<li>使用快捷键或点击I图标，激活输入窗口（不建议直接在console中输入，会导致同步时间）</li>
-<li>输入聊天内容，并按快捷键（默认为Enter）发送聊天信息</li>
-</ol>
-<h2 id="进阶使用"><a href="#进阶使用" class="headerlink" title="进阶使用"></a><a href="#%E8%BF%9B%E9%98%B6%E4%BD%BF%E7%94%A8"></a>进阶使用</h2><ol>
-<li>文件发送</li>
-</ol>
-<ul>
-<li>点击聊天Console菜单（就是那个倒三角）选择 Send File 或 Send Project File 选择文件后发送</li>
-<li>对要发送的文件复制，然后粘贴到聊天窗口，再点击发送超链接，确认发送文件</li>
-</ul>
-<ol>
-<li>消息群发</li>
-</ol>
-<ul>
-<li>在Smart视图中，点击Broadcast工具图标（就是那个发射塔的图标），输入内容并选择要发送的好友，群及讨论群，再点击确定</li>
-</ul>
-<ol>
-<li>代码评审（未来接入Gerrit）</li>
-</ol>
-<ul>
-<li>在编辑器中右键菜单中点击<code>Code Review</code>，输入对代码的评审注释，选择发送的对象，点击确定发送</li>
-<li>对方接收到代码评审消息，点击代码位置，直接跳转到本地相同的代码位置，然后修改吧。</li>
-</ul>
-<h2 id="快捷键"><a href="#快捷键" class="headerlink" title="快捷键"></a><a href="#%E5%BF%AB%E6%8D%B7%E9%94%AE"></a>快捷键</h2><p>注：在eclipse中，CR表示Enter键</p>
-<ul>
-<li>激活输入，默认CR，在console下面打开一个小窗口进行输入</li>
-<li>发送，默认CR (Enter键)，发送消息</li>
-<li>上/下一个聊天, 默认左/右箭头，也可以在console工具栏使用鼠标切换</li>
-<li>隐藏聊天，默认Alt + M，隐藏Contact视图，清空当前聊天内容</li>
-<li>关闭聊天，默认Alt + C，关闭Contact视图和所有的聊天窗口</li>
-<li>退出输入，默认ESC</li>
-</ul>
-<p>注：快捷键有可能与eclipse中的热键冲突，请点击？打开首选项重新设置</p>
-<h2 id="感谢"><a href="#感谢" class="headerlink" title="感谢"></a><a href="#%E6%84%9F%E8%B0%A2"></a>感谢</h2><p>SmartQQ Java API: <a href="https://github.com/ScienJus/smartqq" target="_blank" rel="noopener">https://github.com/ScienJus/smartqq</a></p>
-<h2 id="问题提交"><a href="#问题提交" class="headerlink" title="问题提交"></a><a href="#%E9%97%AE%E9%A2%98%E6%8F%90%E4%BA%A4"></a>问题提交</h2><p>任何问题包括建议均可以在<a href="https://github.com/Jamling/SmartQQ4Eclipse/issues" target="_blank" rel="noopener">Issue</a>中提交</p>
-<p>如果为Issue，建议带上eclipse版本及本插件版本信息（可以在Preference-&gt;SmartQQ中查看并复制版本信息）</p>
-<p>项目地址：<a href="https://gitee.com/xgg_511/SmartQQ4Eclipse" target="_blank" rel="noopener">点击进入</a></p>
-
-      
-
-      
-        <div class="page-reward">
+        <p>可以作为家用网络监控器的一种廉价解决方案 
+基本思路是：使用avconv/GStreamer读取摄像头并生成flv视频流 -> Strobe Media Playback接受视频流 -> nginx服务器页面嵌入Strobe的flash播放器 -> nginx的rtmp模块实现直播。</p>
+<pre><code>安装nginx+rtmp</code></pre>
+<p>参考<a href="https://www.tuicool.com/articles/iauQNr">使用 nginx 和 rtmp 插件搭建视频直播和点播服务器</a></p>
+<p>安装依赖</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">sudo apt-get install build-essential libpcre3 libpcre3-dev libssl-dev</span></tr></table></figure>	    
+<p>安装nginx和rtmp</p>
+<p><img src="https://cyckerr.github.io/blog/2017/09/29/SmartQQ/nginx_an.png" alt=""/></p> 
+<p>修改nginx配置文件</p>
+<p><img src="https://cyckerr.github.io/blog/2017/09/29/SmartQQ/nginx_update.png" alt=""/></p> 	
+<pre><code>安装Strobe Media Playback</code></pre>
+<p>参考<a href="https://blog.gtwang.org/iot/raspberry-pi-nginx-rtmp-server-live-streaming/">樹莓派架設 RTMP 串流（Streaming）伺服器，傳送即時攝影機影像</a></p> 
+<p>到<a href="https://sourceforge.net/projects/smp.adobe/">这里</a>下载最新的Strobe Media Playback</p> 
+<p>解压后</p>	
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">cp -r for Flash Player 10.1/ /usr/local/nginx/html/strobe</span></tr></table></figure>	    	
+<p>在目录 /usr/local/nginx/html下新建一个live.html</p>
+<p><img src="https://cyckerr.github.io/blog/2017/09/29/SmartQQ/nginx_html.png" alt=""></p>
+<pre><code>安装avconv/GStreamer</code></pre>
+<p>这两个都是读取摄像头生成视频流的，不同的是avconv仅支持软解码，会消耗树莓派可怜的CPU资源，而GStreamer支持硬解码，理论上会比前者流畅</p>	
+<p>安装avconv</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">sudo apt-get install libav-tools</span></tr></table></figure>		
+<p>安装GStreamer</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">sudo apt-get install gstreamer1.0-tools</span></tr></table></figure>			
+<pre><code>启动</code></pre>
+<p>新建一个.sh文件</p>	
+<p><img src="https://cyckerr.github.io/blog/2017/09/29/SmartQQ/nginx_ssh.png" alt=""></p>	
+<p>其他电脑浏览器（在手机测试失败，应该是浏览器不支持flash player的原因）输入网址 192.168.5.92/live.html</p>
+<p>或者直接使用播放器（potplayer），打开流 rtmp://192.168.5.92/live/camera 也可以看</p>	
+<pre><code>开机自启动</code></pre>
+<p>需要完成两个工作：ip的自动获取和文档修改、添加自启动任务</p> 
+<p>1）需要修改两个地方，一个是 /usr/local/nginx/html/live.html，一个是 gst-launch-1.0命令</p>	
+<p><img src="https://cyckerr.github.io/blog/2017/09/29/SmartQQ/nginx_sh.png" alt=""></p>
+<p>需要注意 ifconfig 一定要用绝对路径 /sbin/ifconfig，否则自动执行时找不到 ifconfig 命令。参考<a href="https://ubuntuforums.org/showthread.php?t=1917504">这里</a></p>
+<p>另外一个细节是，sed 命令不要用 / 作为分隔符（这里用%），因为bash里会和后面的路径分割符 / 混淆。参考<a href="http://blog.chinaunix.net/uid-20644632-id-68032.html">这里</a></p>
+<p>2)自启动方法有几种，比如 rc.local和 uodate-rc.d，这里为了增加服务的鲁棒性，使用crontab计划任务监听的方式，如果没找到相应进程就启动。</p>
+<p><img src="https://cyckerr.github.io/blog/2017/09/29/SmartQQ/nginx_fi.png" alt=""></p>	
+<p>cron里添加任务：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">*/1 * * * * sh /home/pi/auto_nginx.sh</span></tr></table></figure>				
+<p>每隔1分钟执行一次脚本 auto_nginx.sh，ps -ef 检查是否有相应进程（不要用top），如果没有就直接开启一个窗口执行 nginx.sh</p>	
+<p>坑1：linux的窗口命令一般是 gnome-terminal，但树莓派用的是 lxterminal。参考<a href="https://www.raspberrypi.org/forums/viewtopic.php?t=66206&p=485866">这里</a></p>
+<p>坑2：脚本前面要加一句 export DISPLAY=:0.0，否则cron执行 lxterminal会失败（手动输入是成功的）原因在<a href="https://askubuntu.com/questions/202873/cron-cannot-run-gnome-terminal">这里</a>，cron并不知道当前的显示设备，所以需要手动指定一个</p>	
+<p><img src="https://cyckerr.github.io/blog/2017/09/29/SmartQQ/nginx_good.jpg" alt=""></p>
+	
+	<div class="page-reward">
           <a href="javascript:;" class="page-reward-btn tooltip-top">
             <div class="tooltip tooltip-east">
             <span class="tooltip-item">
@@ -298,7 +234,7 @@
             <span class="tooltip-content">
               <span class="tooltip-text">
                 <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>感谢老板<i class="icon icon-quo-right"></i></p>
                   <div class="reward-box">
                     
                     <div class="reward-box-item">
@@ -389,7 +325,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://123xiao.github.io/blog/2017/09/29/SmartQQ/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://cyckerr.github.io/blog/2017/09/29/SmartQQ/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -407,7 +343,7 @@
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          阿里巴巴Java开发规约插件-体验
+         Java 使用 Redis
         
       </div>
     </a>
@@ -453,12 +389,12 @@
 <script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
 <script>
 var gitment = new Gitment({
-  id: "https://123xiao.github.io/blog/blog/2017/09/29/SmartQQ/",
-  owner: '123xiao',
-  repo: '123xiao.github.io',
+  id: "https://cyckerr.github.io/blog/blog/2017/09/29/SmartQQ/",
+  owner: 'cyckerr',
+  repo: 'cyckerr.github.io',
   oauth: {
-    client_id: '06ec42356d27e0d04e23',
-    client_secret: '35128fc8a844ddcce009dfe65e8a570ee318c2a1',
+    client_id: 'ddf8bd22f7b39ffa069d',
+    client_secret: '074c3adaaf0d7fb12d0eae896d2cbf32005de12e',
   },
 })
 gitment.render('gitment-ctn')
@@ -473,7 +409,7 @@ gitment.render('gitment-ctn')
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2018 无名键客
+    		&copy; 2018 Cyckerr
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -647,7 +583,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">一名后辈，愿跟上大神的脚步！</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">一个好的程序员应该是那种过单行线都要往两边看的人。</div>
   	  	
     	</section>
     
