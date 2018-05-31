@@ -185,44 +185,36 @@
         <p>可以作为家用网络监控器的一种廉价解决方案 
 基本思路是：使用avconv/GStreamer读取摄像头并生成flv视频流 -> Strobe Media Playback接受视频流 -> nginx服务器页面嵌入Strobe的flash播放器 -> nginx的rtmp模块实现直播。</p>
 <pre><code>安装nginx+rtmp</code></pre>
-<p>参考<a href="https://www.tuicool.com/articles/iauQNr">使用 nginx 和 rtmp 插件搭建视频直播和点播服务器</a></p>
-<p>安装依赖</p>
+<p>参考<a href="https://www.tuicool.com/articles/iauQNr">使用 nginx 和 rtmp 插件搭建视频直播和点播服务器</a></br>安装依赖</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">sudo apt-get install build-essential libpcre3 libpcre3-dev libssl-dev</span></tr></table></figure>	    
 <p>安装nginx和rtmp</p>
 <p><img src="https://cyckerr.github.io/blog/2017/09/29/SmartQQ/nginx_an.png" alt=""/></p> 
 <p>修改nginx配置文件</p>
 <p><img src="https://cyckerr.github.io/blog/2017/09/29/SmartQQ/nginx_update.png" alt=""/></p> 	
 <pre><code>安装Strobe Media Playback</code></pre>
-<p>参考<a href="https://blog.gtwang.org/iot/raspberry-pi-nginx-rtmp-server-live-streaming/">樹莓派架設 RTMP 串流（Streaming）伺服器，傳送即時攝影機影像</a></p> 
-<p>到<a href="https://sourceforge.net/projects/smp.adobe/">这里</a>下载最新的Strobe Media Playback</p> 
-<p>解压后</p>	
+<p>参考<a href="https://blog.gtwang.org/iot/raspberry-pi-nginx-rtmp-server-live-streaming/">樹莓派架設 RTMP 串流（Streaming）伺服器，傳送即時攝影機影像</a></br>到<a href="https://sourceforge.net/projects/smp.adobe/">这里</a>下载最新的Strobe Media Playback</br>解压后</p> 
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">cp -r for Flash Player 10.1/ /usr/local/nginx/html/strobe</span></tr></table></figure>	    	
 <p>在目录 /usr/local/nginx/html下新建一个live.html</p>
 <p><img src="https://cyckerr.github.io/blog/2017/09/29/SmartQQ/nginx_html.png" alt=""></p>
 <pre><code>安装avconv/GStreamer</code></pre>
-<p>这两个都是读取摄像头生成视频流的，不同的是avconv仅支持软解码，会消耗树莓派可怜的CPU资源，而GStreamer支持硬解码，理论上会比前者流畅</p>	
-<p>安装avconv</p>
+<p>这两个都是读取摄像头生成视频流的，不同的是avconv仅支持软解码，会消耗树莓派可怜的CPU资源，而GStreamer支持硬解码，理论上会比前者流畅</br>安装avconv</p>	
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">sudo apt-get install libav-tools</span></tr></table></figure>		
 <p>安装GStreamer</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">sudo apt-get install gstreamer1.0-tools</span></tr></table></figure>			
 <pre><code>启动</code></pre>
 <p>新建一个.sh文件</p>	
 <p><img src="https://cyckerr.github.io/blog/2017/09/29/SmartQQ/nginx_ssh.png" alt=""></p>	
-<p>其他电脑浏览器（在手机测试失败，应该是浏览器不支持flash player的原因）输入网址 192.168.5.92/live.html</p>
-<p>或者直接使用播放器（potplayer），打开流 rtmp://192.168.5.92/live/camera 也可以看</p>	
+<p>其他电脑浏览器（在手机测试失败，应该是浏览器不支持flash player的原因）输入网址 192.168.5.92/live.html</br>或者直接使用播放器（potplayer），打开流 rtmp://192.168.5.92/live/camera 也可以看</p>
 <pre><code>开机自启动</code></pre>
-<p>需要完成两个工作：ip的自动获取和文档修改、添加自启动任务</p> 
-<p>1）需要修改两个地方，一个是 /usr/local/nginx/html/live.html，一个是 gst-launch-1.0命令</p>	
+<p>需要完成两个工作：ip的自动获取和文档修改、添加自启动任务</br>1）需要修改两个地方，一个是 /usr/local/nginx/html/live.html，一个是 gst-launch-1.0命令</p> 
 <p><img src="https://cyckerr.github.io/blog/2017/09/29/SmartQQ/nginx_sh.png" alt=""></p>
-<p>需要注意 ifconfig 一定要用绝对路径 /sbin/ifconfig，否则自动执行时找不到 ifconfig 命令。参考<a href="https://ubuntuforums.org/showthread.php?t=1917504">这里</a></p>
-<p>另外一个细节是，sed 命令不要用 / 作为分隔符（这里用%），因为bash里会和后面的路径分割符 / 混淆。参考<a href="http://blog.chinaunix.net/uid-20644632-id-68032.html">这里</a></p>
+<p>需要注意 ifconfig 一定要用绝对路径 /sbin/ifconfig，否则自动执行时找不到 ifconfig 命令。参考<a href="https://ubuntuforums.org/showthread.php?t=1917504">这里</a></br>另外一个细节是，sed 命令不要用 / 作为分隔符（这里用%），因为bash里会和后面的路径分割符 / 混淆。参考<a href="http://blog.chinaunix.net/uid-20644632-id-68032.html">这里</a></p>
 <p>2)自启动方法有几种，比如 rc.local和 uodate-rc.d，这里为了增加服务的鲁棒性，使用crontab计划任务监听的方式，如果没找到相应进程就启动。</p>
 <p><img src="https://cyckerr.github.io/blog/2017/09/29/SmartQQ/nginx_fi.png" alt=""></p>	
 <p>cron里添加任务：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">*/1 * * * * sh /home/pi/auto_nginx.sh</span></tr></table></figure>				
 <p>每隔1分钟执行一次脚本 auto_nginx.sh，ps -ef 检查是否有相应进程（不要用top），如果没有就直接开启一个窗口执行 nginx.sh</p>	
-<p>坑1：linux的窗口命令一般是 gnome-terminal，但树莓派用的是 lxterminal。参考<a href="https://www.raspberrypi.org/forums/viewtopic.php?t=66206&p=485866">这里</a></p>
-<p>坑2：脚本前面要加一句 export DISPLAY=:0.0，否则cron执行 lxterminal会失败（手动输入是成功的）原因在<a href="https://askubuntu.com/questions/202873/cron-cannot-run-gnome-terminal">这里</a>，cron并不知道当前的显示设备，所以需要手动指定一个</p>	
+<p>坑1：linux的窗口命令一般是 gnome-terminal，但树莓派用的是 lxterminal。参考<a href="https://www.raspberrypi.org/forums/viewtopic.php?t=66206&p=485866">这里</a></br>坑2：脚本前面要加一句 export DISPLAY=:0.0，否则cron执行 lxterminal会失败（手动输入是成功的）原因在<a href="https://askubuntu.com/questions/202873/cron-cannot-run-gnome-terminal">这里</a>，cron并不知道当前的显示设备，所以需要手动指定一个</p>
 <p><img src="https://cyckerr.github.io/blog/2017/09/29/SmartQQ/nginx_good.jpg" alt=""></p>
 	
 	<div class="page-reward">
