@@ -231,7 +231,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/blog/2017/09/06/Division/">Java中字符串按照“|”分割</a>
+      <a class="article-title" href="/blog/2017/09/06/Division/">Springboot 过滤json中的特殊字符，避免xss攻击</a>
     </h1>
   
 
@@ -244,14 +244,13 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>在java中，经常会对字符串进行分割，使用split方法。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">String str = <span class="string">"CX708|BKK-HKG|2017-09-27"</span>;</span><br><span class="line">String[] arr = str.split(<span class="string">","</span>);</span><br></pre></td></tr></table></figure>
-<p>打印出来的arr是str字符串按照“,”切割后的，</p>
-<p>但是如果把“,”换成“|”，则按照以上代码切割是会有问题，切割后arr是每一个字符是一个字符串。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">String str = <span class="string">"CX708|BKK-HKG|2017-09-27"</span>;</span><br><span class="line">String[] arr = str.split(<span class="string">"|"</span>);</span><br></pre></td></tr></table></figure>
-<p>这个时候只要把代码改为一下代码即可：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">String str = <span class="string">"CX708|BKK-HKG|2017-09-27"</span>;</span><br><span class="line">String[] arr = str.split(<span class="string">"\\|"</span>);</span><br></pre></td></tr></table></figure>
-<p>这样就可以正常分割字符串了<br><img src="http://ww4.sinaimg.cn/large/0060lm7Tly1fj9o5jg52kj30d60d6glx.jpg" alt="enter description here"></p>
+        <p>web安全中，xss防御是比较稀疏平常的。</br>
+
+在使用springboot中，类似于普通的参数parameter，attribute，header一类的，可以直接使用过滤器来过滤。而前端发送回来的json字符串貌似没那么方便过滤了。</br>
+
+一般在springboot中，前端传递json，后端使用@RequestBody来接收；而后端响应json发送至前端，则会使用@ResponseBody。</br>
+
+这里考虑用自定义json消息解析器来过滤前端传递或者后端响应的json。</p>
 
       
 
