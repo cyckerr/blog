@@ -5,25 +5,33 @@
   
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <link rel="dns-prefetch" href="https://123xiao.github.io/blog">
-  <title>Java中字符串按照“|”分割 | 无名键客</title>
+  <link rel="dns-prefetch" href="https://cyckerr.github.io/blog">
+  <title>Springboot 过滤json中的特殊字符，避免xss攻击 | Cyckerr</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="在java中，经常会对字符串进行分割，使用split方法。 12String str = &quot;CX708|BKK-HKG|2017-09-27&quot;;String[] arr = str.split(&quot;,&quot;); 打印出来的arr是str字符串按照“,”切割后的， 但是如果把“,”换成“|”，则按照以上代码切割是会有问题，切割后arr是每一个字符是一个字符串。 12String str = &quot;CX708|">
+  <meta name="description" content="web安全中，xss防御是比较稀疏平常的。
+在使用springboot中，类似于普通的参数parameter，attribute，header一类的，可以直接使用过滤器来过滤。而前端发送回来的json字符串貌似没那么方便过滤了。
+一般在springboot中，前端传递json，后端使用@RequestBody来接收；而后端响应json发送至前端，则会使用@ResponseBody。
+这里考虑用自定义json消息解析器来过滤前端传递或者后端响应的json。">
 <meta name="keywords" content="随笔">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java中字符串按照“|”分割">
-<meta property="og:url" content="https://123xiao.github.io/blog/2017/09/06/Division/index.html">
-<meta property="og:site_name" content="无名键客">
-<meta property="og:description" content="在java中，经常会对字符串进行分割，使用split方法。 12String str = &quot;CX708|BKK-HKG|2017-09-27&quot;;String[] arr = str.split(&quot;,&quot;); 打印出来的arr是str字符串按照“,”切割后的， 但是如果把“,”换成“|”，则按照以上代码切割是会有问题，切割后arr是每一个字符是一个字符串。 12String str = &quot;CX708|">
+<meta property="og:title" content="Springboot 过滤json中的特殊字符，避免xss攻击">
+<meta property="og:url" content="https://cyckerr.github.io/blog/2017/09/06/Division/index.html">
+<meta property="og:site_name" content="Cyckerr">
+<meta property="og:description" content="web安全中，xss防御是比较稀疏平常的。
+在使用springboot中，类似于普通的参数parameter，attribute，header一类的，可以直接使用过滤器来过滤。而前端发送回来的json字符串貌似没那么方便过滤了。
+一般在springboot中，前端传递json，后端使用@RequestBody来接收；而后端响应json发送至前端，则会使用@ResponseBody。
+这里考虑用自定义json消息解析器来过滤前端传递或者后端响应的json。">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="http://ww4.sinaimg.cn/large/0060lm7Tly1fj9o5jg52kj30d60d6glx.jpg">
 <meta property="og:updated_time" content="2018-04-08T10:59:26.232Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Java中字符串按照“|”分割">
-<meta name="twitter:description" content="在java中，经常会对字符串进行分割，使用split方法。 12String str = &quot;CX708|BKK-HKG|2017-09-27&quot;;String[] arr = str.split(&quot;,&quot;); 打印出来的arr是str字符串按照“,”切割后的， 但是如果把“,”换成“|”，则按照以上代码切割是会有问题，切割后arr是每一个字符是一个字符串。 12String str = &quot;CX708|">
-<meta name="twitter:image" content="http://ww4.sinaimg.cn/large/0060lm7Tly1fj9o5jg52kj30d60d6glx.jpg">
+<meta name="twitter:title" content="Springboot 过滤json中的特殊字符，避免xss攻击">
+<meta name="twitter:description" content="web安全中，xss防御是比较稀疏平常的。
+在使用springboot中，类似于普通的参数parameter，attribute，header一类的，可以直接使用过滤器来过滤。而前端发送回来的json字符串貌似没那么方便过滤了。
+一般在springboot中，前端传递json，后端使用@RequestBody来接收；而后端响应json发送至前端，则会使用@ResponseBody。
+这里考虑用自定义json消息解析器来过滤前端传递或者后端响应的json。">
+<meta name="twitter:image" content="">
   
-    <link rel="alternative" href="/atom.xml" title="无名键客" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="Cyckerr" type="application/atom+xml">
   
   
     <link rel="icon" href="/blog/assets/blogImg/favicon.png">
@@ -53,10 +61,10 @@
 			<img src="/blog/assets/blogImg/tx.jpg" class="js-avatar">
 		</a>
 		<hgroup>
-		  <h1 class="header-author"><a href="/blog/">无名键客</a></h1>
+		  <h1 class="header-author"><a href="/blog/">Cyckerr</a></h1>
 		</hgroup>
 		
-		<p class="header-subtitle">人若无名 方可专心练键！</p>
+		<p class="header-subtitle">一个好的程序员应该是那种过单行线都要往两边看的人。</p>
 		
 
 		<nav class="header-menu">
@@ -86,9 +94,9 @@
 		<nav class="header-nav">
 			<div class="social">
 				
-					<a class="github" target="_blank" href="https://github.com/123xiao" title="github"><i class="icon-github"></i></a>
+					<a class="github" target="_blank" href="https://github.com/cyckerr" title="github"><i class="icon-github"></i></a>
 		        
-					<a class="qq" target="_blank" href="/blog/1258183603" title="qq"><i class="icon-qq"></i></a>
+					<a class="qq" target="_blank" href="/blog/1436002669" title="qq"><i class="icon-qq"></i></a>
 		        
 			</div>
 		</nav>
@@ -109,10 +117,10 @@
 				<img src="/blog/assets/blogImg/tx.jpg" class="js-avatar">
 			</div>
 			<hgroup>
-			  <h1 class="header-author js-header-author">无名键客</h1>
+			  <h1 class="header-author js-header-author">Cyckerr</h1>
 			</hgroup>
 			
-			<p class="header-subtitle"><i class="icon icon-quo-left"></i>人若无名 方可专心练键！<i class="icon icon-quo-right"></i></p>
+			<p class="header-subtitle"><i class="icon icon-quo-left"></i>一个好的程序员应该是那种过单行线都要往两边看的人。<i class="icon icon-quo-right"></i></p>
 			
 			
 			
@@ -125,9 +133,9 @@
 			<nav class="header-nav">
 				<div class="social">
 					
-						<a class="github" target="_blank" href="https://github.com/123xiao" title="github"><i class="icon-github"></i></a>
+						<a class="github" target="_blank" href="https://github.com/cyckerr" title="github"><i class="icon-github"></i></a>
 			        
-						<a class="qq" target="_blank" href="/blog/1258183603" title="qq"><i class="icon-qq"></i></a>
+						<a class="qq" target="_blank" href="/blog/1436002669" title="qq"><i class="icon-qq"></i></a>
 			        
 				</div>
 			</nav>
@@ -160,7 +168,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Java中字符串按照“|”分割
+      Springboot 过滤json中的特殊字符，避免xss攻击 
     </h1>
   
 
@@ -173,14 +181,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>在java中，经常会对字符串进行分割，使用split方法。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">String str = <span class="string">"CX708|BKK-HKG|2017-09-27"</span>;</span><br><span class="line">String[] arr = str.split(<span class="string">","</span>);</span><br></pre></td></tr></table></figure>
-<p>打印出来的arr是str字符串按照“,”切割后的，</p>
-<p>但是如果把“,”换成“|”，则按照以上代码切割是会有问题，切割后arr是每一个字符是一个字符串。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">String str = <span class="string">"CX708|BKK-HKG|2017-09-27"</span>;</span><br><span class="line">String[] arr = str.split(<span class="string">"|"</span>);</span><br></pre></td></tr></table></figure>
-<p>这个时候只要把代码改为一下代码即可：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">String str = <span class="string">"CX708|BKK-HKG|2017-09-27"</span>;</span><br><span class="line">String[] arr = str.split(<span class="string">"\\|"</span>);</span><br></pre></td></tr></table></figure>
-<p>这样就可以正常分割字符串了<br><img src="http://ww4.sinaimg.cn/large/0060lm7Tly1fj9o5jg52kj30d60d6glx.jpg" alt="enter description here"></p>
+        <article class="am-article blog-article-p">
+        <div class="am-article-bd blog_article_content">
+        	<p>web安全中，xss防御是比较稀疏平常的。</p><p>在使用springboot中，类似于普通的参数parameter，attribute，header一类的，可以直接使用过滤器来过滤。而前端发送回来的json字符串貌似没那么方便过滤了。</p><p>一般在springboot中，前端传递json，后端使用@RequestBody来接收；而后端响应json发送至前端，则会使用@ResponseBody。</p><p>这里考虑用自定义json消息解析器来过滤前端传递或者后端响应的json。</p><p>1、首先创建一个自定义json消息解析器：</p><pre><br>import java.io.IOException;<br>import java.lang.reflect.Type;<br><br>import com.weymay.index.common.util.StringUtil;<br>import org.springframework.http.HttpInputMessage;<br>import org.springframework.http.HttpOutputMessage;<br>import org.springframework.http.converter.HttpMessageNotReadableException;<br>import org.springframework.http.converter.HttpMessageNotWritableException;<br>import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;<br><br>import com.fasterxml.jackson.databind.JavaType;<br><br><br>/**<br> * 过滤json中的特殊字符避免xss攻击的消息解析器<br> * <br> */<br>public class XSSMappingJackson2HttpMessageConverter extends MappingJackson2HttpMessageConverter {<br><br>    /**<br>     * 读取json参数时处理<br>     * @param type<br>     * @param contextClass<br>     * @param inputMessage<br>     * @return<br>     * @throws IOException<br>     * @throws HttpMessageNotReadableException<br>     */<br>    @Override<br>    public Object read(Type type, Class<!--?--> contextClass,<br>                       HttpInputMessage inputMessage) throws IOException,<br>            HttpMessageNotReadableException {<br>        JavaType javaType = getJavaType(type, contextClass);<br>        Object obj = readJavaType(javaType, inputMessage);<br>        //得到请求json<br>        String json = super.getObjectMapper().writeValueAsString(obj);<br>        //过滤特殊字符<br>        String result = StringUtil.filterDangerString(json);<br>        Object resultObj = super.getObjectMapper().readValue(result, javaType);<br>        return resultObj;<br>    }<br><br>    /**<br>     *<br>     * @param javaType<br>     * @param inputMessage<br>     * @return<br>     */<br>    private Object readJavaType(JavaType javaType, HttpInputMessage inputMessage) {<br>        try {<br>            return super.getObjectMapper().readValue(inputMessage.getBody(), javaType);<br>        } catch (IOException ex) {<br>            throw new HttpMessageNotReadableException("Could not read JSON: " + ex.getMessage(), ex);<br>        }<br>    }<br><br><br>    /**<br>     * 输出json时处理<br>     * @param object<br>     * @param outputMessage<br>     * @throws IOException<br>     * @throws HttpMessageNotWritableException<br>     */<br>    @Override<br>    protected void writeInternal(Object object, HttpOutputMessage outputMessage)<br>            throws IOException, HttpMessageNotWritableException {<br>        //得到要输出的json<br>        String json = super.getObjectMapper().writeValueAsString(object);<br>        //过滤特殊字符<br>        String result = StringUtil.filterDangerString(json.toString());<br>        // 输出<br>        outputMessage.getBody().write(result.getBytes());<br>    }<br>}</pre><p>这里省略掉了过滤特殊字符的操作工具。</p><p>2、直接在springboot启动的时候，加载自定义json消息解析器，用来处理json。在启动类中添加：</p><pre>@Bean<br>public HttpMessageConverters xssHttpMessageConverters() {<br>    XSSMappingJackson2HttpMessageConverter xssMappingJackson2HttpMessageConverter = new XSSMappingJackson2HttpMessageConverter();<br>    HttpMessageConverter<!--?--> converter = xssMappingJackson2HttpMessageConverter;<br>    return new HttpMessageConverters(converter);<br>}</pre><p>即可。</p><p><br></p><p>普通的参数可以创建过滤器来过滤，这里便不再细细写了。</p><p>没图不好看，附个图：</p><p><img src="/Kira/new/res/upload/2017-10/wW766nzpt75Hj7cpj7x.png" alt="TIM图片20171009094103" style="max-width:100%;" class=""><br></p><!--!--?----><!--!--?----><!--!--!--?------><!--!--!--?------><!--!--?----><!--!--?----></div>
+      </article>
 
       
 
@@ -194,7 +198,7 @@
             <span class="tooltip-content">
               <span class="tooltip-text">
                 <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>感谢老板<i class="icon icon-quo-right"></i></p>
                   <div class="reward-box">
                     
                     <div class="reward-box-item">
@@ -299,7 +303,7 @@
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          致永远离开我们的一位程序员
+          应用部署之nginx负载
         
       </div>
     </a>
@@ -345,12 +349,12 @@
 <script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
 <script>
 var gitment = new Gitment({
-  id: "https://123xiao.github.io/blog/blog/2017/09/06/Division/",
-  owner: '123xiao',
-  repo: '123xiao.github.io',
+  id: "https://cyckerr.github.io/blog/blog/2017/09/06/Division/",
+  owner: 'cyckerr',
+  repo: 'cyckerr.github.io',
   oauth: {
-    client_id: '06ec42356d27e0d04e23',
-    client_secret: '35128fc8a844ddcce009dfe65e8a570ee318c2a1',
+    client_id: 'ddf8bd22f7b39ffa069d',
+    client_secret: '074c3adaaf0d7fb12d0eae896d2cbf32005de12e',
   },
 })
 gitment.render('gitment-ctn')
@@ -365,7 +369,7 @@ gitment.render('gitment-ctn')
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2018 无名键客
+    		&copy; 2018 Cyckerr
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
