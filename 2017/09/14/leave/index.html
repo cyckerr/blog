@@ -5,28 +5,24 @@
   
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <link rel="dns-prefetch" href="https://123xiao.github.io/blog">
-  <title>致永远离开我们的一位程序员 | 无名键客</title>
+  <link rel="dns-prefetch" href="https://cyckerr.github.io/blog">
+  <title>应用部署之nginx负载  | Cyckerr</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="在洋溢着一片欢乐气息的阿里年会的朋友圈里，我们看到了这样一条沉痛的消息 —— 一位名为苏享茂的开发者遇人不淑，在经历过糟心的婚姻后还被各种死缠烂打，被前妻以其所研发产品 WePhone 有网络电话功能是灰色运营，以及其个人有漏税行为威胁，声称要让其产品下架、倾家荡产，并索要1000万、三亚的房子。在这样的逼迫下，身心俱疲、不堪其扰的苏享茂最终无奈地选择了自杀。 而这一消息也已得到了证实。">
+  <meta name="description" content="通过nginx部署两个tomcat并实现session共享">
 <meta name="keywords" content="随笔">
 <meta property="og:type" content="article">
-<meta property="og:title" content="致永远离开我们的一位程序员">
-<meta property="og:url" content="https://123xiao.github.io/blog/2017/09/14/leave/index.html">
-<meta property="og:site_name" content="无名键客">
-<meta property="og:description" content="在洋溢着一片欢乐气息的阿里年会的朋友圈里，我们看到了这样一条沉痛的消息 —— 一位名为苏享茂的开发者遇人不淑，在经历过糟心的婚姻后还被各种死缠烂打，被前妻以其所研发产品 WePhone 有网络电话功能是灰色运营，以及其个人有漏税行为威胁，声称要让其产品下架、倾家荡产，并索要1000万、三亚的房子。在这样的逼迫下，身心俱疲、不堪其扰的苏享茂最终无奈地选择了自杀。 而这一消息也已得到了证实。">
+<meta property="og:title" content="应用部署之nginx负载">
+<meta property="og:url" content="https://cyckerr.github.io/blog/2017/09/14/leave/index.html">
+<meta property="og:site_name" content="Cyckerr">
+<meta property="og:description" content="通过nginx部署两个tomcat并实现session共享">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="http://img.blog.csdn.net/20170909131458153">
-<meta property="og:image" content="http://img.blog.csdn.net/20170909131540171">
-<meta property="og:image" content="http://img.blog.csdn.net/20170909131636680">
-<meta property="og:image" content="http://img.blog.csdn.net/20170909131722832">
 <meta property="og:updated_time" content="2018-04-08T02:46:32.465Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="致永远离开我们的一位程序员">
-<meta name="twitter:description" content="在洋溢着一片欢乐气息的阿里年会的朋友圈里，我们看到了这样一条沉痛的消息 —— 一位名为苏享茂的开发者遇人不淑，在经历过糟心的婚姻后还被各种死缠烂打，被前妻以其所研发产品 WePhone 有网络电话功能是灰色运营，以及其个人有漏税行为威胁，声称要让其产品下架、倾家荡产，并索要1000万、三亚的房子。在这样的逼迫下，身心俱疲、不堪其扰的苏享茂最终无奈地选择了自杀。 而这一消息也已得到了证实。">
-<meta name="twitter:image" content="http://img.blog.csdn.net/20170909131458153">
+<meta name="twitter:title" content="应用部署之nginx负载">
+<meta name="twitter:description" content="通过nginx部署两个tomcat并实现session共享">
+<meta name="twitter:image" content="">
   
-    <link rel="alternative" href="/atom.xml" title="无名键客" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="Cyckerr" type="application/atom+xml">
   
   
     <link rel="icon" href="/blog/assets/blogImg/favicon.png">
@@ -56,10 +52,10 @@
 			<img src="/blog/assets/blogImg/tx.jpg" class="js-avatar">
 		</a>
 		<hgroup>
-		  <h1 class="header-author"><a href="/blog/">无名键客</a></h1>
+		  <h1 class="header-author"><a href="/blog/">Cyckerr</a></h1>
 		</hgroup>
 		
-		<p class="header-subtitle">人若无名 方可专心练键！</p>
+		<p class="header-subtitle">一个好的程序员应该是那种过单行线都要往两边看的人。</p>
 		
 
 		<nav class="header-menu">
@@ -89,9 +85,9 @@
 		<nav class="header-nav">
 			<div class="social">
 				
-					<a class="github" target="_blank" href="https://github.com/123xiao" title="github"><i class="icon-github"></i></a>
+					<a class="github" target="_blank" href="https://github.com/cyckerr" title="github"><i class="icon-github"></i></a>
 		        
-					<a class="qq" target="_blank" href="/blog/1258183603" title="qq"><i class="icon-qq"></i></a>
+					<a class="qq" target="_blank" href="/blog/1436002669" title="qq"><i class="icon-qq"></i></a>
 		        
 			</div>
 		</nav>
@@ -112,10 +108,10 @@
 				<img src="/blog/assets/blogImg/tx.jpg" class="js-avatar">
 			</div>
 			<hgroup>
-			  <h1 class="header-author js-header-author">无名键客</h1>
+			  <h1 class="header-author js-header-author">Cyckerr</h1>
 			</hgroup>
 			
-			<p class="header-subtitle"><i class="icon icon-quo-left"></i>人若无名 方可专心练键！<i class="icon icon-quo-right"></i></p>
+			<p class="header-subtitle"><i class="icon icon-quo-left"></i>一个好的程序员应该是那种过单行线都要往两边看的人。<i class="icon icon-quo-right"></i></p>
 			
 			
 			
@@ -128,9 +124,9 @@
 			<nav class="header-nav">
 				<div class="social">
 					
-						<a class="github" target="_blank" href="https://github.com/123xiao" title="github"><i class="icon-github"></i></a>
+						<a class="github" target="_blank" href="https://github.com/cyckerr" title="github"><i class="icon-github"></i></a>
 			        
-						<a class="qq" target="_blank" href="/blog/1258183603" title="qq"><i class="icon-qq"></i></a>
+						<a class="qq" target="_blank" href="/blog/1436002669" title="qq"><i class="icon-qq"></i></a>
 			        
 				</div>
 			</nav>
@@ -163,7 +159,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      致永远离开我们的一位程序员
+      应用部署之nginx负载
     </h1>
   
 
@@ -176,13 +172,38 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>在洋溢着一片欢乐气息的阿里年会的朋友圈里，我们看到了这样一条沉痛的消息 —— 一位名为苏享茂的开发者遇人不淑，在经历过糟心的婚姻后还被各种死缠烂打，被前妻以其所研发产品 WePhone 有网络电话功能是灰色运营，以及其个人有漏税行为威胁，声称要让其产品下架、倾家荡产，并索要1000万、三亚的房子。在这样的逼迫下，身心俱疲、不堪其扰的苏享茂最终无奈地选择了自杀。</p>
-<p>而这一消息也已得到了证实。<br><a id="more"></a></p>
-<p>据了解，WePhone 是一款能够让用户向其他 WePhone 用户免费发送短信和拨打电话的 App，为北京曳尾科技有限公司研发产品。</p>
-<p>而 WePhone 创始人苏享茂与其前妻相识于世纪佳缘，男方花了几百万才追到。结果女方不但隐瞒婚史，还以舅舅是司法机关的、以举报老公涉嫌违法为威胁要求巨额赔偿。</p>
-<p>作为一个整日与代码打交道的程序员，在现实世界会遭遇很多问题，比如婚姻大事、法律盲区等等，我们总慨叹社会复杂，人心不古，总觉得技术上的问题都不难解决，最困难的还是和人交流。</p>
-<p>可是，当一个鲜活的生命离开人世，我们扼腕嗟叹，祈愿逝者安息，生者坚强，而更需要反思的，是为什么在代码之外的世界里，作为程序员的我们，会频频遭遇维艰的困境？在此，希望广大的程序员提升心理素质，不要踏入禁区，珍惜生命。</p>
-<p>最后，致这位永远离开我们的开发者，愿天堂没有恶人相逼，愿你可做自己喜欢的事情。<br><img src="http://img.blog.csdn.net/20170909131458153" alt="enter description here"><br><img src="http://img.blog.csdn.net/20170909131540171" alt="enter description here"><br><img src="http://img.blog.csdn.net/20170909131636680" alt="enter description here"><br><img src="http://img.blog.csdn.net/20170909131722832" alt="enter description here"></p>
+        <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h2 id="端口占用"><a href="#端口占用" class="headerlink" title="端口占用" target="_blank"></a>端口占用</h2><h4 id="1、在windows下如何查看80端口占用情况-是被哪个进程占用-如何终止等"><a href="#1、在windows下如何查看80端口占用情况-是被哪个进程占用-如何终止等" class="headerlink" title="1、在windows下如何查看80端口占用情况?是被哪个进程占用?如何终止等." target="_blank"></a>1、在windows下如何查看80端口占用情况?是被哪个进程占用?如何终止等.</h4><pre><code>这里主要是用到windows下的DOS工具,点击"开始"--"运行",输入"cmd"后点击确定按钮,进入DOS窗口,接下来分别运行以下命令:
+&gt;netstat -aon | findstr "80"
+        Proto  Local Address          Foreign Address        State            PID
+        ====  ============      ==============  ==========  ======
+        TCP    0.0.0.0:80                    0.0.0.0:0                LISTENING      1688
+</code></pre><p>可以看出80端口被进程号为1688的程序占用.</p>
+<pre><code>&gt;tasklist | findstr "1688"
+</code></pre><p>图像名                                                PID            会话名                    会话#       内存使用<br>               ========================= ====== ================ ======== ============<br>               inetinfo.exe                                        1688           Console                      0              2,800 K<br>很明显,是inetinfo占用了80端口;inetinfo.exe主要用于支持微软Windows IIS网络服务的除错,这个程序对你系统的正常运行是非常重要的.<br>        当然,并不是只有inetinfo.exe进程会占用80端口,这只是我机器上的情况.如果你并不了解此进程是干什么用的,千万不要盲目地将其kill掉,最好先百度或Google搜索一下;当然如果你很了解它,并确定可以终止,那么继续下面的命令.</p>
+<pre><code>&gt;taskkill /pid 1688 /F
+</code></pre><p>成功: 已终止 PID 为 1688 的进程。<br>如果你很熟悉此进程,并确定可以终止,那么就直接使用上面的命令把PID为1688的进程终止.(这一步同样可以在任务管理器中执行,inetinfo.exe就是任务管理器中的映像名称,选中它,点击”结束进程”即可)</p>
+<pre><code>&gt;tasklist | findstr "1688"
+</code></pre><p>再次确认是否成功终止,如果成功终止此次执行命令后应返回空.</p>
+<h4 id="2、linux下如何查看80端口占用情况-是被哪个进程占用-如何终止等"><a href="#2、linux下如何查看80端口占用情况-是被哪个进程占用-如何终止等" class="headerlink" title="2、linux下如何查看80端口占用情况?是被哪个进程占用?如何终止等" target="_blank"></a>2、linux下如何查看80端口占用情况?是被哪个进程占用?如何终止等</h4><p>查询端口是否被占用，被哪个进程占用有两种方式：1、netstat -anl | grep “80” ；2、lsof -i:80</p>
+<p>终止进程的方式：kill pid</p>
+<h2 id="启动停止nginx"><a href="#启动停止nginx" class="headerlink" title="启动停止nginx" target="_blank"></a>启动停止nginx</h2><h4 id="1、启动："><a href="#1、启动：" class="headerlink" title="1、启动：" target="_blank"></a>1、启动：</h4><p>C:\server\nginx-1.0.2&gt;start nginx</p>
+<p>或</p>
+<p>C:\server\nginx-1.0.2&gt;nginx.exe</p>
+<p>注：建议使用第一种，第二种会使你的cmd窗口一直处于执行中，不能进行其他命令操作。</p>
+<h4 id="2、停止："><a href="#2、停止：" class="headerlink" title="2、停止：" target="_blank"></a>2、停止：</h4><p>C:\server\nginx-1.0.2&gt;nginx.exe -s stop</p>
+<p>或</p>
+<p>C:\server\nginx-1.0.2&gt;nginx.exe -s quit</p>
+<p>注：stop是快速停止nginx，可能并不保存相关信息；quit是完整有序的停止nginx，并保存相关信息。</p>
+<h4 id="3、重新载入Nginx："><a href="#3、重新载入Nginx：" class="headerlink" title="3、重新载入Nginx：" target="_blank"></a>3、重新载入Nginx：</h4><p>C:\server\nginx-1.0.2&gt;nginx.exe -s reload</p>
+<p>当配置信息修改，需要重新载入这些配置时使用此命令。</p>
+<h4 id="4、重新打开日志文件："><a href="#4、重新打开日志文件：" class="headerlink" title="4、重新打开日志文件：" target="_blank"></a>4、重新打开日志文件：</h4><p>C:\server\nginx-1.0.2&gt;nginx.exe -s reopen</p>
+<h4 id="5、查看Nginx版本："><a href="#5、查看Nginx版本：" class="headerlink" title="5、查看Nginx版本：" target="_blank"></a>5、查看Nginx版本：</h4><p>C:\server\nginx-1.0.2&gt;nginx -v</p>
+<h2 id="配置nginx-conf"><a href="#配置nginx-conf" class="headerlink" title="配置nginx.conf" target="_blank"></a>配置nginx.conf</h2><figure class="highlight plain"><div class="table-area"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">#user  nobody;</div><div class="line">worker_processes  1;</div><div class="line"></div><div class="line">#error_log  logs/error.log;</div><div class="line">#error_log  logs/error.log  notice;</div><div class="line">#error_log  logs/error.log  info;</div><div class="line"></div><div class="line">#pid        logs/nginx.pid;</div><div class="line"></div><div class="line"></div><div class="line">events {</div><div class="line">    worker_connections  1024;</div><div class="line">}</div><div class="line"></div><div class="line"></div><div class="line">http {</div><div class="line">    include       mime.types;</div><div class="line">    default_type  application/octet-stream;</div><div class="line"></div><div class="line">    #log_format  main  '$remote_addr - $remote_user [$time_local] "$request" '</div><div class="line">    #                  '$status $body_bytes_sent "$http_referer" '</div><div class="line">    #                  '"$http_user_agent" "$http_x_forwarded_for"';</div><div class="line"></div><div class="line">    #access_log  logs/access.log  main;</div><div class="line"></div><div class="line">    sendfile        on;</div><div class="line">    #tcp_nopush     on;</div><div class="line"></div><div class="line">    #keepalive_timeout  0;</div><div class="line">    keepalive_timeout  65;</div><div class="line"></div><div class="line">    gzip  on; #Gzip compression</div><div class="line"></div><div class="line">    #Server cluster </div><div class="line">    upstream  netitcast.com {  #Server cluster   </div><div class="line">        server    127.0.0.1:8081  weight=1; #Weight is the meaning of weight, the greater the weight, the greater the probability of distribution. </div><div class="line">        server    127.0.0.1:8082  weight=2;  </div><div class="line">    }</div><div class="line">    server {</div><div class="line">        listen       80;</div><div class="line">        server_name  127.0.0.1;</div><div class="line"></div><div class="line">        #charset koi8-r;</div><div class="line"></div><div class="line">        access_log  logs/host.access.log;</div><div class="line"></div><div class="line">        #location / {</div><div class="line">        #    root   html;</div><div class="line">        #    index  index.html index.htm;</div><div class="line">        #}</div><div class="line">        location / {  </div><div class="line">            proxy_pass http://netitcast.com;  #proxy name is upstream name</div><div class="line">            proxy_redirect default;  </div><div class="line">            expires      3d;   #cache three days</div><div class="line">        }  </div><div class="line">        #error_page  404              /404.html;</div><div class="line"></div><div class="line">        # redirect server error pages to the static page /50x.html</div><div class="line">        #</div><div class="line">        error_page   500 502 503 504  /50x.html;</div><div class="line">        location = /50x.html {</div><div class="line">            root   html;</div><div class="line">        }</div><div class="line"></div><div class="line">        # proxy the PHP scripts to Apache listening on 127.0.0.1:80</div><div class="line">        #</div><div class="line">        #location ~ \.php$ {</div><div class="line">        #    proxy_pass   http://127.0.0.1;</div><div class="line">        #}</div><div class="line"></div><div class="line">        # pass the PHP scripts to FastCGI server listening on 127.0.0.1:9000</div><div class="line">        #</div><div class="line">        #location ~ \.php$ {</div><div class="line">        #    root           html;</div><div class="line">        #    fastcgi_pass   127.0.0.1:9000;</div><div class="line">        #    fastcgi_index  index.php;</div><div class="line">        #    fastcgi_param  SCRIPT_FILENAME  /scripts$fastcgi_script_name;</div><div class="line">        #    include        fastcgi_params;</div><div class="line">        #}</div><div class="line"></div><div class="line">        # deny access to .htaccess files, if Apache's document root</div><div class="line">        # concurs with nginx's one</div><div class="line">        #</div><div class="line">        #location ~ /\.ht {</div><div class="line">        #    deny  all;</div><div class="line">        #}</div><div class="line">    }</div><div class="line"></div><div class="line"></div><div class="line">    # another virtual host using mix of IP-, name-, and port-based configuration</div><div class="line">    #</div><div class="line">    #server {</div><div class="line">    #     listen       8081;</div><div class="line">    #    listen       somename:8080;</div><div class="line">    #    server_name  somename  alias  another.alias;</div><div class="line"></div><div class="line">    #    location / {</div><div class="line">    #        root   html;</div><div class="line">    #        index  index.html index.htm;</div><div class="line">    #    }</div><div class="line">    #}</div><div class="line"></div><div class="line"></div><div class="line">    # HTTPS server</div><div class="line">    #</div><div class="line">    #server {</div><div class="line">    #    listen       443 ssl;</div><div class="line">    #    server_name  localhost;</div><div class="line"></div><div class="line">    #    ssl_certificate      cert.pem;</div><div class="line">    #    ssl_certificate_key  cert.key;</div><div class="line"></div><div class="line">    #    ssl_session_cache    shared:SSL:1m;</div><div class="line">    #    ssl_session_timeout  5m;</div><div class="line"></div><div class="line">    #    ssl_ciphers  HIGH:!aNULL:!MD5;</div><div class="line">    #    ssl_prefer_server_ciphers  on;</div><div class="line"></div><div class="line">    #    location / {</div><div class="line">    #        root   html;</div><div class="line">    #        index  index.html index.htm;</div><div class="line">    #    }</div><div class="line">    #}</div><div class="line"></div><div class="line">}</div></pre></td></tr></tbody></table></div></figure>
+      
+    </div>
 
       
 
@@ -196,7 +217,7 @@
             <span class="tooltip-content">
               <span class="tooltip-text">
                 <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>感谢老板<i class="icon icon-quo-right"></i></p>
                   <div class="reward-box">
                     
                     <div class="reward-box-item">
@@ -301,7 +322,7 @@
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          Chrome插件开发-网页中运行自己的JS
+          requests模块实践：爬取淘宝商品信息和价格
         
       </div>
     </a>
@@ -347,12 +368,12 @@
 <script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
 <script>
 var gitment = new Gitment({
-  id: "https://123xiao.github.io/blog/blog/2017/09/14/leave/",
-  owner: '123xiao',
-  repo: '123xiao.github.io',
+  id: "https://cyckerr.github.io/blog/blog/2017/09/14/leave/",
+  owner: 'cyckerr',
+  repo: 'cyckerr.github.io',
   oauth: {
-    client_id: '06ec42356d27e0d04e23',
-    client_secret: '35128fc8a844ddcce009dfe65e8a570ee318c2a1',
+    client_id: 'ddf8bd22f7b39ffa069d',
+    client_secret: '074c3adaaf0d7fb12d0eae896d2cbf32005de12e',
   },
 })
 gitment.render('gitment-ctn')
@@ -367,7 +388,7 @@ gitment.render('gitment-ctn')
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2018 无名键客
+    		&copy; 2018 Cyckerr
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
