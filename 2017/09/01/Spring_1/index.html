@@ -172,7 +172,7 @@
       </header>
     
     <div class="article-entry" itemprop="articleBody">
-	    <img src="https://cyckerr.github.io/blog/2017/09/01/Spring_1/JavaScript.jpg" alt=""/>
+	    <img src="https://cyckerr.github.io/blog/2017/09/01/Spring_1/xeicheng.jpg" alt=""/>
       <figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">&lt;script type="text/javascript"&gt;</div><div class="line">	var x = 0;</div><div class="line">	function foo(){</div><div class="line">		x++;</div><div class="line">		this.x = x;</div><div class="line">		retuen foo;</div><div class="line">	}</div><div class="line">	var bar = new new foo;</div><div class="line">	console.log(bar.x);</div><div class="line">&lt;/script&gt;</div><div class="line">// 答案：undefined </div><div class="line">// 解析：return foo每次返回本身，即一个构造函数，函数也是一个对象 </div><div class="line">// 根据定义，当构造函数返回一个对象后，new方法就不会执行foo.call(bar);</div></pre></td></tr></tbody></table></figure>
         
 
