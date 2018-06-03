@@ -5,25 +5,25 @@
   
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <link rel="dns-prefetch" href="https://123xiao.github.io/blog">
-  <title>Spring源码阅读（一）——整体结构 | 无名键客</title>
+  <link rel="dns-prefetch" href="https://cyckerr.github.io/blog">
+  <title>携程一道Javascript面试题  | Cyckerr</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="spring 总共大约有20个模块，由1300多个不同的文件构成。Spring源码阅读可以分为三个路线：IOC，AOP，外部组件。  Spring整体结构Spring框架根据功能可以分为核心容器，AOP切面编程，数据访问和WEB这四个主要的部分。">
-<meta name="keywords" content="Spring,源码">
+  <meta name="description" content="携程一道Javascript面试题">
+<meta name="keywords" content="携程一道Javascript面试题">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Spring源码阅读（一）——整体结构">
-<meta property="og:url" content="https://123xiao.github.io/blog/2017/09/01/Spring_1/index.html">
-<meta property="og:site_name" content="无名键客">
-<meta property="og:description" content="spring 总共大约有20个模块，由1300多个不同的文件构成。Spring源码阅读可以分为三个路线：IOC，AOP，外部组件。  Spring整体结构Spring框架根据功能可以分为核心容器，AOP切面编程，数据访问和WEB这四个主要的部分。">
+<meta property="og:title" content="携程一道Javascript面试题">
+<meta property="og:url" content="https://cyckerr.github.io/blog/2017/09/01/Spring_1/index.html">
+<meta property="og:site_name" content="Cyckerr">
+<meta property="og:description" content="携程一道Javascript面试题">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://img.blog.csdn.net/20170828123622192?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMzk2NzE3NQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
 <meta property="og:updated_time" content="2018-04-08T10:59:43.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Spring源码阅读（一）——整体结构">
-<meta name="twitter:description" content="spring 总共大约有20个模块，由1300多个不同的文件构成。Spring源码阅读可以分为三个路线：IOC，AOP，外部组件。  Spring整体结构Spring框架根据功能可以分为核心容器，AOP切面编程，数据访问和WEB这四个主要的部分。">
+<meta name="twitter:title" content="携程一道Javascript面试题">
+<meta name="twitter:description" content="携程一道Javascript面试题">
 <meta name="twitter:image" content="http://img.blog.csdn.net/20170828123622192?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMzk2NzE3NQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
   
-    <link rel="alternative" href="/atom.xml" title="无名键客" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="Cyckerr" type="application/atom+xml">
   
   
     <link rel="icon" href="/blog/assets/blogImg/favicon.png">
@@ -53,10 +53,10 @@
 			<img src="/blog/assets/blogImg/tx.jpg" class="js-avatar">
 		</a>
 		<hgroup>
-		  <h1 class="header-author"><a href="/blog/">无名键客</a></h1>
+		  <h1 class="header-author"><a href="/blog/">Cyckerr</a></h1>
 		</hgroup>
 		
-		<p class="header-subtitle">人若无名 方可专心练键！</p>
+		<p class="header-subtitle">一个好的程序员应该是那种过单行线都要往两边看的人。</p>
 		
 
 		<nav class="header-menu">
@@ -86,9 +86,9 @@
 		<nav class="header-nav">
 			<div class="social">
 				
-					<a class="github" target="_blank" href="https://github.com/123xiao" title="github"><i class="icon-github"></i></a>
+					<a class="github" target="_blank" href="https://github.com/cyckerr" title="github"><i class="icon-github"></i></a>
 		        
-					<a class="qq" target="_blank" href="/blog/1258183603" title="qq"><i class="icon-qq"></i></a>
+					<a class="qq" target="_blank" href="/blog/1436002669" title="qq"><i class="icon-qq"></i></a>
 		        
 			</div>
 		</nav>
@@ -109,10 +109,10 @@
 				<img src="/blog/assets/blogImg/tx.jpg" class="js-avatar">
 			</div>
 			<hgroup>
-			  <h1 class="header-author js-header-author">无名键客</h1>
+			  <h1 class="header-author js-header-author">Cyckerr</h1>
 			</hgroup>
 			
-			<p class="header-subtitle"><i class="icon icon-quo-left"></i>人若无名 方可专心练键！<i class="icon icon-quo-right"></i></p>
+			<p class="header-subtitle"><i class="icon icon-quo-left"></i>一个好的程序员应该是那种过单行线都要往两边看的人。<i class="icon icon-quo-right"></i></p>
 			
 			
 			
@@ -125,9 +125,9 @@
 			<nav class="header-nav">
 				<div class="social">
 					
-						<a class="github" target="_blank" href="https://github.com/123xiao" title="github"><i class="icon-github"></i></a>
+						<a class="github" target="_blank" href="https://github.com/cyckerr" title="github"><i class="icon-github"></i></a>
 			        
-						<a class="qq" target="_blank" href="/blog/1258183603" title="qq"><i class="icon-qq"></i></a>
+						<a class="qq" target="_blank" href="/blog/1436002669" title="qq"><i class="icon-qq"></i></a>
 			        
 				</div>
 			</nav>
@@ -160,7 +160,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Spring源码阅读（一）——整体结构
+     携程一道Javascript面试题
     </h1>
   
 
@@ -172,48 +172,8 @@
       </header>
     
     <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p><a href="http://lib.csdn.net/base/javaee" title="Java EE知识库" target="_blank" rel="noopener">spring</a> 总共大约有20个模块，由1300多个不同的文件构成。<br>Spring源码阅读可以分为三个路线：IOC，AOP，外部组件。</p>
-</blockquote>
-<h2 id="Spring整体结构"><a href="#Spring整体结构" class="headerlink" title="Spring整体结构"></a><a name="t0"></a>Spring整体结构</h2><p>Spring框架根据功能可以分为核心容器，AOP切面编程，数据访问和WEB这四个主要的部分。<br><img src="http://img.blog.csdn.net/20170828123622192?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMzk2NzE3NQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="enter description here"><br><a id="more"></a></p>
-<h3 id="（一）核心容器"><a href="#（一）核心容器" class="headerlink" title="（一）核心容器"></a><a name="t1"></a>（一）核心容器</h3><p>核心容器主要是由spring-beans，spring-core，spring-context和spring-expression组成。</p>
-<ul>
-<li><p>spring-beans，spring-core是spring框架的核心包，实现了控制反转和依赖注入的容器功能。</p>
-</li>
-<li><p>控制反转(IOC)是指把传统上由程序代码直接操控的对象的调用权交给容器，通过容器来实现对象组件的装配和管理。所谓的“控制反转”概念就是对组件对象控制权的转移，从程序代码本身转移到了外部容器。</p>
-</li>
-<li><p>依赖注入(DI)是控制反转的一种实现方式，除却依赖注入还有依赖查找(DL)，后来依赖查找被移除所以Spring中的控制反转也被称为依赖注入。依赖注入主要包括：接口注入（Interface Injection），设值注入（Setter Injection）和构造子注入（Constructor Injection）三种方式。</p>
-</li>
-<li><p>BeanFactory 接口是Spring框架中的核心接口，它是工厂模式的具体实现。BeanFactory 使用控制反转对应用程序的配置和依赖性规范与实际的应用程序代码进行了分离。但 BeanFactory 容器实例化后并不会自动实例化 Bean，只有当 Bean 被使用时 BeanFactory 容器才会对该 Bean 进行实例化与依赖关系的装配。</p>
-</li>
-<li><p>spring-context模块构架于 spring-beans和spring-core核心包之上，拓展了BeanFactory生成Spring的上下文环境。ApplicationContext是该模块的核心接口，她是 BeanFactory 的超类，与 BeanFactory 不同，ApplicationContext 容器实例化后会自动对所有的单实例 Bean 进行实例化与依赖关系的装配，使之处于待用状态。</p>
-</li>
-</ul>
-<h3 id="（二）AOP"><a href="#（二）AOP" class="headerlink" title="（二）AOP"></a><a name="t2"></a>（二）AOP</h3><p>AOP主要是spring-aop，spring-aspects和spring-instrumentation组成</p>
-<ul>
-<li><p>spring-aop是Spring的另一个核心模块，是Aop主要的实现模块。是以JVM的动态代理技术为基础，然后设计出了一系列的Aop横切实现，比如前置通知、返回通知、异常通知等，同时，Pointcut接口来匹配切入点，可以使用现有的切入点来设计横切面，也可以扩展相关方法根据需求进行切入。</p>
-</li>
-<li><p>spring-aspects模块集成AspectJ框架，为AOP提供具体的实现方法。</p>
-</li>
-</ul>
-<h3 id="（三）数据访问"><a href="#（三）数据访问" class="headerlink" title="（三）数据访问"></a><a name="t3"></a>（三）数据访问</h3><p>数据访问主要是由spring-jdbc，spring-tx，spring-orm组成。</p>
-<ul>
-<li><p>spring-jdbc模块是Spring 提供的JDBC抽象框架的主要实现模块，用于简化Spring JDBC。</p>
-</li>
-<li><p>spring-tx模块是Spring JDBC事务控制实现模块</p>
-</li>
-<li><p>spring-orm模块是ORM框架支持模块，主要集成 <a href="http://lib.csdn.net/base/javaee" title="Java EE知识库" target="_blank" rel="noopener">hibernate</a>, <a href="http://lib.csdn.net/base/java" title="Java 知识库" target="_blank" rel="noopener">Java</a> Persistence API (JPA) 和 <a href="http://lib.csdn.net/base/java" title="Java 知识库" target="_blank" rel="noopener">java</a> Data Objects (JDO) 用于资源管理、数据访问对象(DAO)的实现和事务策略。</p>
-</li>
-</ul>
-<h3 id="（三）WEB"><a href="#（三）WEB" class="headerlink" title="（三）WEB"></a><a name="t4"></a>（三）WEB</h3><p>WEB主要是由spring-web，spring-webmvc组成。</p>
-<ul>
-<li><p>spring-web模块为Spring提供了最基础Web支持，主要建立于核心容器之上，通过Servlet或者Listeners来初始化IoC容器，也包含一些与Web相关的支持。</p>
-</li>
-<li><p>spring-webmvc模块众所周知是一个的Web-Servlet模块，实现了Spring MVC（model-view-controller）的Web应用。</p>
-</li>
-</ul>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a><a name="t5"></a>总结</h2><p>Spring主要分为核心组件和外部组件两大部分，其中核心组件又可以分为IOC和AOP两部分。因此，spring的源码阅读可以分为三个路线：IOC，AOP，外部组件。</p>
+      <figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">&lt;script type="text/javascript"&gt;</div><div class="line">	var x = 0;</div><div class="line">	function foo(){</div><div class="line">		x++;</div><div class="line">		this.x = x;</div><div class="line">		retuen foo;</div><div class="line">	}</div><div class="line">	var bar = new new foo;</div><div class="line">	console.log(bar.x);</div><div class="line">&lt;/script&gt;</div><div class="line">// 答案：undefined </div><div class="line">// 解析：return foo每次返回本身，即一个构造函数，函数也是一个对象 </div><div class="line">// 根据定义，当构造函数返回一个对象后，new方法就不会执行foo.call(bar);</div></pre></td></tr></tbody></table></figure>
+        
 
       
 
@@ -227,7 +187,7 @@
             <span class="tooltip-content">
               <span class="tooltip-text">
                 <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>感谢老板<i class="icon icon-quo-right"></i></p>
                   <div class="reward-box">
                     
                     <div class="reward-box-item">
@@ -336,7 +296,7 @@
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          Java中字符串按照“|”分割
+          Springboot 过滤json中的特殊字符，避免xss攻击
         
       </div>
     </a>
@@ -382,12 +342,12 @@
 <script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
 <script>
 var gitment = new Gitment({
-  id: "https://123xiao.github.io/blog/blog/2017/09/01/Spring_1/",
-  owner: '123xiao',
-  repo: '123xiao.github.io',
+  id: "https://cyckerr.github.io/blog/blog/2017/09/01/Spring_1/",
+  owner: 'cyckerr',
+  repo: 'cyckerr.github.io',
   oauth: {
-    client_id: '06ec42356d27e0d04e23',
-    client_secret: '35128fc8a844ddcce009dfe65e8a570ee318c2a1',
+    client_id: 'ddf8bd22f7b39ffa069d',
+    client_secret: '074c3adaaf0d7fb12d0eae896d2cbf32005de12e',
   },
 })
 gitment.render('gitment-ctn')
@@ -402,7 +362,7 @@ gitment.render('gitment-ctn')
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2018 无名键客
+    		&copy; 2018 Cyckerr
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -576,7 +536,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">一名后辈，愿跟上大神的脚步！</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">一个好的程序员应该是那种过单行线都要往两边看的人。</div>
   	  	
     	</section>
     
