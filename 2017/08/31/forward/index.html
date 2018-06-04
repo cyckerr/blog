@@ -5,25 +5,25 @@
   
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <link rel="dns-prefetch" href="https://123xiao.github.io/blog">
-  <title>2017，站在巨人肩膀我们一路前行 | 无名键客</title>
+  <link rel="dns-prefetch" href="https://cyckerr.github.io/blog">
+  <title>docker的基本使用命令 | Cyckerr</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="前言2016年已经过去，2017年过去一半了。2017年似乎还有好多的事情只能等到2018年来完成，写一本书，讲讲课，在新的技术的路上一路前行..2018似乎我给自己的规划是蛮好的。不过此刻我想给大家列一些6逼的技术资料，2018我们一起学习。一个人不可能一下子成功，更不可能一步登天，所有成功与荣耀的背后是无尽的心酸。">
+  <meta name="description" content="容器技术是指可以让多个独立的用户空间运行在同一台宿主机上。容器只能运行与底层宿主机相同或相似的操作系统。在超大规模的多租户服务部署、轻量级沙盒以及对安全要求不太高的隔离环境中，容器技术非常流行。Docker可以认为是一种先进的容器技术。">
 <meta name="keywords" content="分享,随笔,干货">
 <meta property="og:type" content="article">
-<meta property="og:title" content="2017，站在巨人肩膀我们一路前行">
-<meta property="og:url" content="https://123xiao.github.io/blog/2017/08/31/forward/index.html">
-<meta property="og:site_name" content="无名键客">
-<meta property="og:description" content="前言2016年已经过去，2017年过去一半了。2017年似乎还有好多的事情只能等到2018年来完成，写一本书，讲讲课，在新的技术的路上一路前行..2018似乎我给自己的规划是蛮好的。不过此刻我想给大家列一些6逼的技术资料，2018我们一起学习。一个人不可能一下子成功，更不可能一步登天，所有成功与荣耀的背后是无尽的心酸。">
+<meta property="og:title" content="docker的基本使用命令">
+<meta property="og:url" content="https://cyckerr.github.io/blog/2017/08/31/forward/index.html">
+<meta property="og:site_name" content="Cyckerr">
+<meta property="og:description" content="容器技术是指可以让多个独立的用户空间运行在同一台宿主机上。容器只能运行与底层宿主机相同或相似的操作系统。在超大规模的多租户服务部署、轻量级沙盒以及对安全要求不太高的隔离环境中，容器技术非常流行。Docker可以认为是一种先进的容器技术。">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://file06.16sucai.com/2016/0513/d742d79fefc290407be117c17a2ce834.jpg">
 <meta property="og:updated_time" content="2018-04-08T10:58:16.136Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="2017，站在巨人肩膀我们一路前行">
-<meta name="twitter:description" content="前言2016年已经过去，2017年过去一半了。2017年似乎还有好多的事情只能等到2018年来完成，写一本书，讲讲课，在新的技术的路上一路前行..2018似乎我给自己的规划是蛮好的。不过此刻我想给大家列一些6逼的技术资料，2018我们一起学习。一个人不可能一下子成功，更不可能一步登天，所有成功与荣耀的背后是无尽的心酸。">
+<meta name="twitter:title" content="docker的基本使用命令">
+<meta name="twitter:description" content="容器技术是指可以让多个独立的用户空间运行在同一台宿主机上。容器只能运行与底层宿主机相同或相似的操作系统。在超大规模的多租户服务部署、轻量级沙盒以及对安全要求不太高的隔离环境中，容器技术非常流行。Docker可以认为是一种先进的容器技术。">
 <meta name="twitter:image" content="http://file06.16sucai.com/2016/0513/d742d79fefc290407be117c17a2ce834.jpg">
   
-    <link rel="alternative" href="/atom.xml" title="无名键客" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="Cyckerr" type="application/atom+xml">
   
   
     <link rel="icon" href="/blog/assets/blogImg/favicon.png">
@@ -53,10 +53,10 @@
 			<img src="/blog/assets/blogImg/tx.jpg" class="js-avatar">
 		</a>
 		<hgroup>
-		  <h1 class="header-author"><a href="/blog/">无名键客</a></h1>
+		  <h1 class="header-author"><a href="/blog/">Cyckerr</a></h1>
 		</hgroup>
 		
-		<p class="header-subtitle">人若无名 方可专心练键！</p>
+		<p class="header-subtitle">一个好的程序员应该是那种过单行线都要往两边看的人。</p>
 		
 
 		<nav class="header-menu">
@@ -86,9 +86,9 @@
 		<nav class="header-nav">
 			<div class="social">
 				
-					<a class="github" target="_blank" href="https://github.com/123xiao" title="github"><i class="icon-github"></i></a>
+					<a class="github" target="_blank" href="https://github.com/cyckerr" title="github"><i class="icon-github"></i></a>
 		        
-					<a class="qq" target="_blank" href="/blog/1258183603" title="qq"><i class="icon-qq"></i></a>
+					<a class="qq" target="_blank" href="/blog/1436002669" title="qq"><i class="icon-qq"></i></a>
 		        
 			</div>
 		</nav>
@@ -109,10 +109,10 @@
 				<img src="/blog/assets/blogImg/tx.jpg" class="js-avatar">
 			</div>
 			<hgroup>
-			  <h1 class="header-author js-header-author">无名键客</h1>
+			  <h1 class="header-author js-header-author">Cyckerr</h1>
 			</hgroup>
 			
-			<p class="header-subtitle"><i class="icon icon-quo-left"></i>人若无名 方可专心练键！<i class="icon icon-quo-right"></i></p>
+			<p class="header-subtitle"><i class="icon icon-quo-left"></i>一个好的程序员应该是那种过单行线都要往两边看的人。<i class="icon icon-quo-right"></i></p>
 			
 			
 			
@@ -125,9 +125,9 @@
 			<nav class="header-nav">
 				<div class="social">
 					
-						<a class="github" target="_blank" href="https://github.com/123xiao" title="github"><i class="icon-github"></i></a>
+						<a class="github" target="_blank" href="https://github.com/cyckerr" title="github"><i class="icon-github"></i></a>
 			        
-						<a class="qq" target="_blank" href="/blog/1258183603" title="qq"><i class="icon-qq"></i></a>
+						<a class="qq" target="_blank" href="/blog/1436002669" title="qq"><i class="icon-qq"></i></a>
 			        
 				</div>
 			</nav>
@@ -160,7 +160,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      2017，站在巨人肩膀我们一路前行
+     docker的基本使用命令
     </h1>
   
 
@@ -173,53 +173,35 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>2016年已经过去，2017年过去一半了。2017年似乎还有好多的事情只能等到2018年来完成，写一本书，讲讲课，在新的技术的路上一路前行..2018似乎我给自己的规划是蛮好的。不过此刻我想给大家列一些6逼的技术资料，2018我们一起学习。<br>一个人不可能一下子成功，更不可能一步登天，所有成功与荣耀的背后是无尽的心酸。</p>
-<p><img src="http://file06.16sucai.com/2016/0513/d742d79fefc290407be117c17a2ce834.jpg" alt=""></p>
-<a id="more"></a>
-<h1 id="技术网站"><a href="#技术网站" class="headerlink" title="技术网站"></a><a name="t1"></a>技术网站</h1><p>腾讯Web前端团队：<a href="http://www.alloyteam.com/" target="_blank" rel="noopener">http://www.alloyteam.com/</a><br>阿里中间件团队博客: 地址：<a href="http://jm.taobao.org/" target="_blank" rel="noopener">http://jm.taobao.org/</a><br>淘宝前端团队：地址：<a href="http://www.taobaofed.org/" target="_blank" rel="noopener">http://www.taobaofed.org/</a><br>美团技术团队博客： 地址： <a href="http://tech.meituan.com/" target="_blank" rel="noopener">http://tech.meituan.com/</a><br>腾讯社交用户体验设计(ISUX) 地址：<a href="http://isux.tencent.com/" target="_blank" rel="noopener">http://isux.tencent.com/</a><br>京东设计中心 地址：<a href="http://jdc.jd.com/" target="_blank" rel="noopener">http://jdc.jd.com</a><br>QQ游戏设计中心 地址：<a href="http://gdc.qq.com/" target="_blank" rel="noopener">http://gdc.qq.com</a><br>百度搜索用户体验中心 地址：<a href="http://ued.baidu.com/" target="_blank" rel="noopener">http://ued.baidu.com/</a><br>一淘UX 地址：<a href="http://ux.etao.com/" target="_blank" rel="noopener">http://ux.etao.com</a><br>腾讯CDC 地址：<a href="http://cdc.tencent.com/" target="_blank" rel="noopener">http://cdc.tencent.com</a><br>腾讯ISUX 地址：<a href="http://isux.tencent.com/" target="_blank" rel="noopener">http://isux.tencent.com</a><br>腾讯MXD移动互联网设计中心 地址：<a href="http://mxd.tencent.com/" target="_blank" rel="noopener">http://mxd.tencent.com</a><br>UXDC 2011体验设计峰会 地址：<a href="http://www.uxdc.org/" target="_blank" rel="noopener">http://www.uxdc.org</a><br>视觉同盟 地址：<a href="http://www.visionunion.com/" target="_blank" rel="noopener">http://www.visionunion.com</a><br>Tencent TG ideas 地址：<a href="http://tgideas.qq.com/" target="_blank" rel="noopener">http://tgideas.qq.com</a><br>Tencent AlloyTeam 地址：<a href="http://www.alloyteam.com/" target="_blank" rel="noopener">http://www.alloyteam.com</a><br>QQ客户端团队博客 地址：<a href="http://impd.tencent.com/" target="_blank" rel="noopener">http://impd.tencent.com/</a><br>阿里巴巴（中文站）UED 地址：<a href="http://www.aliued.cn/" target="_blank" rel="noopener">http://www.aliued.cn</a><br>支付宝官方Blog 地址：<a href="http://blog.alipay.com/" target="_blank" rel="noopener">http://blog.alipay.com</a><br>Taobao UED 地址：<a href="http://ued.taobao.com/blog/" target="_blank" rel="noopener">http://ued.taobao.com/blog/</a><br>阿里巴巴国际站UED 地址：<a href="http://www.aliued.com/" target="_blank" rel="noopener">http://www.aliued.com</a><br>百度MUX 地址：<a href="http://mux.baidu.com/" target="_blank" rel="noopener">http://mux.baidu.com</a><br>微博UDC 地址：<a href="http://udc.weibo.com/" target="_blank" rel="noopener">http://udc.weibo.com</a><br>搜狗UED 地址：<a href="http://ued.sogou.com/" target="_blank" rel="noopener">http://ued.sogou.com</a><br>搜狐MUED 地址：<a href="http://mued.sohu.com/" target="_blank" rel="noopener">http://mued.sohu.com</a><br>搜狐畅游VC 地址：<a href="http://vc.changyou.com/index.shtml" target="_blank" rel="noopener">http://vc.changyou.com/index.shtml</a><br>网易用户体验设计中心 地址：<a href="http://uedc.163.com/" target="_blank" rel="noopener">http://uedc.163.com/</a></p>
-<h2 id="淘宝技术团队对外技术博客网站"><a href="#淘宝技术团队对外技术博客网站" class="headerlink" title="淘宝技术团队对外技术博客网站"></a><a name="t2"></a>淘宝技术团队对外技术博客网站</h2><p><a href="http://lib.csdn.net/base/softwaretest" title="软件测试知识库" target="_blank" rel="noopener">测试</a>团队：<a href="http://www.taobaotesting.com/" target="_blank" rel="noopener">http://www.taobaotesting.com/</a><br>淘宝UED团队：<a href="http://ued.taobao.org/blog/" target="_blank" rel="noopener">http://ued.taobao.org/blog/</a><br>阿里妈妈UED团队：<a href="http://ued.alimama.com/" target="_blank" rel="noopener">http://ued.alimama.com/</a><br>阿里数据平台：<a href="http://www.alidata.org/archives" target="_blank" rel="noopener">http://www.alidata.org/archives</a><br>阿里巴巴<a href="http://lib.csdn.net/base/mysql" title="MySQL知识库" target="_blank" rel="noopener">数据库</a>团队：<a href="http://www.taobaodba.com/" target="_blank" rel="noopener">http://www.taobaodba.com/</a><br>阿里中间件团队：<a href="http://jm.taobao.org/" target="_blank" rel="noopener">http://jm.taobao.org/</a></p>
-<h2 id="基础充电"><a href="#基础充电" class="headerlink" title="基础充电"></a><a name="t3"></a>基础充电</h2><p>JDBC 3.0 有什么新特性<br><a href="http://www.ibm.com/developerworks/cn/java/j-jdbcnew/" target="_blank" rel="noopener">http://www.ibm.com/developerworks/cn/java/j-jdbcnew/</a></p>
-<p>Servlet 3.0 实战：异步 Servlet 与 Comet 风格应用程序 IBM<br><a href="http://www.ibm.com/developerworks/cn/java/j-lo-comet/index.html" target="_blank" rel="noopener">http://www.ibm.com/developerworks/cn/java/j-lo-comet/index.html</a></p>
-<p>JSP/Servlet 中的汉字编码问题 IBM<br><a href="http://www.ibm.com/developerworks/cn/java/jsp_dbcsz/index.html" target="_blank" rel="noopener">http://www.ibm.com/developerworks/cn/java/jsp_dbcsz/index.html</a></p>
-<p><a href="http://lib.csdn.net/base/javascript" title="JavaScript知识库" target="_blank" rel="noopener">JavaScript</a> 中的函数式编程实践 IBM<br><a href="http://www.ibm.com/developerworks/cn/web/1006_qiujt_jsfunctional/index.html" target="_blank" rel="noopener">http://www.ibm.com/developerworks/cn/web/1006_qiujt_jsfunctional/index.html</a></p>
-<p>web.xml 中的listener、 filter、servlet 加载顺序及其详解1<br><a href="http://apps.hi.baidu.com/share/detail/33614288" target="_blank" rel="noopener">http://apps.hi.baidu.com/share/detail/33614288</a></p>
-<h2 id="优秀的技术文章"><a href="#优秀的技术文章" class="headerlink" title="优秀的技术文章"></a><a name="t4"></a>优秀的技术文章</h2><p>MINA,xSocket同样的性能缺陷及陷阱,Grizzly better<br><a href="http://www.blogjava.net/adapterofcoms/articles/314560.html" target="_blank" rel="noopener">http://www.blogjava.net/adapterofcoms/articles/314560.html</a></p>
-<p><a href="http://lib.csdn.net/base/javase" title="Java SE知识库" target="_blank" rel="noopener">Java</a>连接池评估报告<br><a href="http://duzc2.iteye.com/blog/pdf" target="_blank" rel="noopener">http://duzc2.iteye.com/blog/pdf</a></p>
-<p>mina vs. yanf4j 性能比较—庄周梦蝶<br><a href="http://www.blogjava.net/killme2008/archive/2009/06/26/284342.html" target="_blank" rel="noopener">http://www.blogjava.net/killme2008/archive/2009/06/26/284342.html</a></p>
-<p>Grizzly和Netty以及Mina简单性能对比—阿里梁飞<br><a href="http://javatar.iteye.com/blog/1126171" target="_blank" rel="noopener">http://javatar.iteye.com/blog/1126171</a></p>
-<p>HTTPS的七个误解<br><a href="http://ijavagos.iteye.com/blog/916029" target="_blank" rel="noopener">http://ijavagos.iteye.com/blog/916029</a></p>
-<p>动态代理方案性能对比—阿里梁飞<br><a href="http://javatar.iteye.com/blog/814426" target="_blank" rel="noopener">http://javatar.iteye.com/blog/814426</a></p>
-<h2 id="后台框架"><a href="#后台框架" class="headerlink" title="后台框架"></a><a name="t5"></a>后台框架</h2><p>iteye中关于shiro的博客列表<br><a href="http://www.iteye.com/blogs/tag/shiro" target="_blank" rel="noopener">http://www.iteye.com/blogs/tag/shiro</a></p>
-<p>让Apache Shiro保护你的应用<br><a href="http://www.infoq.com/cn/articles/apache-shiro" target="_blank" rel="noopener">http://www.infoq.com/cn/articles/apache-shiro</a></p>
-<p>将 Shiro 作为应用的权限基础<br><a href="http://www.ibm.com/developerworks/cn/opensource/os-cn-shiro/" target="_blank" rel="noopener">http://www.ibm.com/developerworks/cn/opensource/os-cn-shiro/</a></p>
-<p><a href="http://lib.csdn.net/base/javaee" title="Java EE知识库" target="_blank" rel="noopener">spring</a> 3.x企业实用开发实战<br><a href="http://www.iteye.com/blogs/subjects/Spring_3" target="_blank" rel="noopener">http://www.iteye.com/blogs/subjects/Spring_3</a> .</p>
-<p>Hibernate4实战最佳实践<br><a href="http://jenmhdn.iteye.com/blog/1627262" target="_blank" rel="noopener">http://jenmhdn.iteye.com/blog/1627262</a></p>
-<p>加速你的<a href="http://lib.csdn.net/base/javaee" title="Java EE知识库" target="_blank" rel="noopener">hibernate</a>引擎（上）(InfoQ)<br><a href="http://www.infoq.com/cn/articles/hibernate_tuning" target="_blank" rel="noopener">http://www.infoq.com/cn/articles/hibernate_tuning</a></p>
-<p>加速你的Hibernate引擎（下）(InfoQ)<br><a href="http://www.infoq.com/cn/articles/hibernate_tuning-ii" target="_blank" rel="noopener">http://www.infoq.com/cn/articles/hibernate_tuning-ii</a></p>
-<p>JdbcTemplate学习笔记<br><a href="http://www.iteye.com/topic/53526" target="_blank" rel="noopener">http://www.iteye.com/topic/53526</a></p>
-<p>Spring 事务管理高级应用难点剖析: 第 1 部分<br><a href="http://www.ibm.com/developerworks/cn/java/j-lo-spring-ts1/index.html?ca=drs" target="_blank" rel="noopener">http://www.ibm.com/developerworks/cn/java/j-lo-spring-ts1/index.html?ca=drs</a></p>
-<p>Spring 事务管理高级应用难点剖析: 第 2 部分<br><a href="http://www.ibm.com/developerworks/cn/java/j-lo-spring-ts2/index.html?ca=dat-cn-0325" target="_blank" rel="noopener">http://www.ibm.com/developerworks/cn/java/j-lo-spring-ts2/index.html?ca=dat-cn-0325</a></p>
-<p>Spring 事务管理高级应用难点剖析: 第 3 部分<br><a href="http://www.ibm.com/developerworks/cn/java/j-lo-spring-ts3/index.html?ca=drs" target="_blank" rel="noopener">http://www.ibm.com/developerworks/cn/java/j-lo-spring-ts3/index.html?ca=drs</a></p>
-<p>Spring 让 LOB 数据操作变得简单易行<br><a href="http://www.ibm.com/developerworks/cn/java/j-lo-spring-lob/index.html?ca=drs-cn" target="_blank" rel="noopener">http://www.ibm.com/developerworks/cn/java/j-lo-spring-lob/index.html?ca=drs-cn</a></p>
-<h2 id="开发工具"><a href="#开发工具" class="headerlink" title="开发工具"></a><a name="t6"></a>开发工具</h2><p>Apache Commons工具集简介<br><a href="http://www.cnblogs.com/jackyrong/archive/2006/10/15/529599.html" target="_blank" rel="noopener">http://www.cnblogs.com/jackyrong/archive/2006/10/15/529599.html</a></p>
-<p>spring里的工具类,摘自spring3.0.5版本<br><a href="http://wen66.iteye.com/blog/830719" target="_blank" rel="noopener">http://wen66.iteye.com/blog/830719</a></p>
-<p>IE浏览器下同一网页多图片显示的瓶颈与优化[原创]<br><a href="http://blog.s135.com/post/332/" target="_blank" rel="noopener">http://blog.s135.com/post/332/</a></p>
-<p>MAC下安装与配置<a href="http://lib.csdn.net/base/mysql" title="MySQL知识库" target="_blank" rel="noopener">MySQL</a><br><a href="http://www.cnblogs.com/macro-cheng/archive/2011/10/25/mysql-001.html" target="_blank" rel="noopener">http://www.cnblogs.com/macro-cheng/archive/2011/10/25/mysql-001.html</a></p>
-<h2 id="架构"><a href="#架构" class="headerlink" title="架构"></a><a name="t7"></a>架构</h2><p>人人网<a href="http://lib.csdn.net/base/android" title="Android知识库" target="_blank" rel="noopener">移动开发</a><a href="http://lib.csdn.net/base/architecture" title="大型网站架构知识库" target="_blank" rel="noopener">架构</a><br><a href="http://www.infoq.com/cn/articles/renren-mobile-arch" target="_blank" rel="noopener">http://www.infoq.com/cn/articles/renren-mobile-arch</a></p>
-<p>2010年InfoQ中文站高性能架构内容回顾：在路上<br><a href="http://www.infoq.com/cn/news/2011/01/infoq-2010-high-performance-sum" target="_blank" rel="noopener">http://www.infoq.com/cn/news/2011/01/infoq-2010-high-performance-sum</a></p>
-<p>百万级访问量网站的技术准备工作 (InfoQ)<br><a href="http://www.infoq.com/cn/articles/lzy-million-visits-site-technical-preparations" target="_blank" rel="noopener">http://www.infoq.com/cn/articles/lzy-million-visits-site-technical-preparations</a></p>
-<p>Java深度历险（一）——Java字节代码的操纵 (InfoQ)<br><a href="http://www.infoq.com/cn/articles/cf-java-byte-code" target="_blank" rel="noopener">http://www.infoq.com/cn/articles/cf-java-byte-code</a></p>
-<p>又拍网的网站技术架构<br><a href="http://www.dbanotes.net/arch/yupoo_arch.html" target="_blank" rel="noopener">http://www.dbanotes.net/arch/yupoo_arch.html</a></p>
-<p>又拍网架构中的分库设计<br><a href="http://www.infoq.com/cn/articles/yupoo-partition-database" target="_blank" rel="noopener">http://www.infoq.com/cn/articles/yupoo-partition-database</a></p>
-<p>豆瓣网技术架构变迁<br><a href="http://www.infoq.com/cn/presentations/hongqn-douban" target="_blank" rel="noopener">http://www.infoq.com/cn/presentations/hongqn-douban</a></p>
-<p>豆瓣网架构-国内<a href="http://lib.csdn.net/base/python" title="Python知识库" target="_blank" rel="noopener">Python</a>语言网站的王者之路<br><a href="http://www.bopor.com/?p=661" target="_blank" rel="noopener">http://www.bopor.com/?p=661</a></p>
-<p><a href="http://lib.csdn.net/base/architecture" title="大型网站架构知识库" target="_blank" rel="noopener">大型网站架构</a>演变和知识体系<br><a href="http://www.blogjava.net/BlueDavy/archive/2008/09/03/226749.html" target="_blank" rel="noopener">http://www.blogjava.net/BlueDavy/archive/2008/09/03/226749.html</a></p>
-<p>JSON 入门指南 (廖 雪峰 , 撰稿人) IBM<br><a href="http://www.ibm.com/developerworks/cn/web/wa-lo-json/" target="_blank" rel="noopener">http://www.ibm.com/developerworks/cn/web/wa-lo-json/</a></p>
-<p>网站架构收集(csdn)<br><a href="http://blog.csdn.net/Damon_King/archive/2008/06/06/2517554.aspx" target="_blank" rel="noopener">http://blog.csdn.net/Damon_King/archive/2008/06/06/2517554.aspx</a></p>
-<p>Spring操作blob和clob<br><a href="http://hi.baidu.com/sunjoe/blog/item/10251a33ae4871fd1a4cff33.html" target="_blank" rel="noopener">http://hi.baidu.com/sunjoe/blog/item/10251a33ae4871fd1a4cff33.html</a></p>
-<p>调查：您的开发团队用什么项目管理软件<br><a href="http://www.cnblogs.com/cmt/archive/2011/01/10/1931861.html" target="_blank" rel="noopener">http://www.cnblogs.com/cmt/archive/2011/01/10/1931861.html</a></p>
-<p>企业服务总线解决方案剖析，第 1 部分: 企业服务总线的基本概念<br><a href="http://www.ibm.com/developerworks/cn/webservices/ws-esb1/" target="_blank" rel="noopener">http://www.ibm.com/developerworks/cn/webservices/ws-esb1/</a></p>
-<p>最后还有我喜欢的<a href="http://lib.csdn.net/base/datastructure" title="算法与数据结构知识库" target="_blank" rel="noopener">算法与数据结构</a>，以及互联网杂谈，这些我都会放在我的csdn和我的云栖博客里面，2017让我们一路前行！</p>
+        <div class="markdown-body"><h6 id="h6-u521Bu5EFAu8FD0u884C"><a name="创建运行" class="reference-link"></a><span class="header-link octicon octicon-link"></span>创建运行</h6><blockquote>
+<p>docker run -it -p 9080:8080 —name=自定义名字 REPOSITORY:TAG </p>
+</blockquote>
+<h6 id="h6--docker-"><a name="查看docker容器" class="reference-link"></a><span class="header-link octicon octicon-link"></span>查看docker容器</h6><blockquote>
+<p>docker ps </p>
+</blockquote>
+<h6 id="h6--docker-"><a name="查看docker镜像" class="reference-link"></a><span class="header-link octicon octicon-link"></span>查看docker镜像</h6><blockquote>
+<p>docker images </p>
+</blockquote>
+<h6 id="h6--docker"><a name="启动docker" class="reference-link"></a><span class="header-link octicon octicon-link"></span>启动docker</h6><blockquote>
+<p>docker start liboffice</p>
+</blockquote>
+<h6 id="h6--docker"><a name="进入docker" class="reference-link"></a><span class="header-link octicon octicon-link"></span>进入docker</h6><blockquote>
+<p>docker exec -it liboffice bash</p>
+</blockquote>
+<h6 id="h6--docker"><a name="拷贝文件到docker" class="reference-link"></a><span class="header-link octicon octicon-link"></span>拷贝文件到docker</h6><blockquote>
+<p>docker cp /etc/apt/sources.list liboffice:/etc/apt/sources.list</p>
+</blockquote>
+<h6 id="h6--dockers"><a name="创建dockers" class="reference-link"></a><span class="header-link octicon octicon-link"></span>创建dockers</h6><blockquote>
+<p>docker run -it —name=swf1 -p 9090:8080 ubuntu:14.04</p>
+</blockquote>
+<h6 id="h6--"><a name="下载镜像：" class="reference-link"></a><span class="header-link octicon octicon-link"></span>下载镜像：</h6><blockquote>
+<p>docker pull nginx  ； docker pull ubuntu:14.04</p>
+</blockquote>
+<h6 id="h6--"><a name="删除镜像：" class="reference-link"></a><span class="header-link octicon octicon-link"></span>删除镜像：</h6><blockquote>
+<p>docker rm dockername</p>
+</blockquote>
+<hr>
+<p>总共有四种创建模式：—net=host none </p></div>
 
       
 
@@ -233,7 +215,7 @@
             <span class="tooltip-content">
               <span class="tooltip-text">
                 <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>感谢老板<i class="icon icon-quo-right"></i></p>
                   <div class="reward-box">
                     
                     <div class="reward-box-item">
@@ -346,7 +328,7 @@
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          从0开始搭建坚不可摧的Web系统主流架构
+          CentOS 7.3下使用yum安装MySQL
         
       </div>
     </a>
@@ -392,12 +374,12 @@
 <script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
 <script>
 var gitment = new Gitment({
-  id: "https://123xiao.github.io/blog/blog/2017/08/31/forward/",
-  owner: '123xiao',
-  repo: '123xiao.github.io',
+  id: "https://cyckerr.github.io/blog/blog/2017/08/31/forward/",
+  owner: 'cyckerr',
+  repo: 'cyckerr.github.io',
   oauth: {
-    client_id: '06ec42356d27e0d04e23',
-    client_secret: '35128fc8a844ddcce009dfe65e8a570ee318c2a1',
+    client_id: 'ddf8bd22f7b39ffa069d',
+    client_secret: '074c3adaaf0d7fb12d0eae896d2cbf32005de12e',
   },
 })
 gitment.render('gitment-ctn')
@@ -412,7 +394,7 @@ gitment.render('gitment-ctn')
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2018 无名键客
+    		&copy; 2018 Cyckerr
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -586,7 +568,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">一名后辈，愿跟上大神的脚步！</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">一个好的程序员应该是那种过单行线都要往两边看的人。</div>
   	  	
     	</section>
     
